@@ -1,7 +1,14 @@
 import { Header } from "../components/Header/Header";
+import { HomeSection } from "../components/HomeSection/HomeSection";
+import { Box } from '@chakra-ui/react';
 
-export function Home () {
+export function Home() {
     return (
-        <Header/>
+        <>
+            <Box display={'flex'} flexDirection={"row"}>
+                <Header />
+                <HomeSection />
+            </Box>
+        </>
     )
 }
