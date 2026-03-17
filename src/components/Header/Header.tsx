@@ -1,33 +1,32 @@
 import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import logo from "../../img/logo.png";
+import { FaHome } from "react-icons/fa";
 
 
 export function Header() {
 	return (
 		<>
-			<Flex position="fixed" fontFamily={'Cinzel'} width={"17%"} height={"100vh"} background={"red.600"} flexDirection={"column"} borderRight={"solid black 1px"} >
+			<Flex position="fixed" fontFamily={'Cinzel'} width={"5%"} height={"100vh"} background={"#111111"} flexDirection={"column"} borderRight={"solid black 1px"} >
 
 				<Flex marginTop={5} flexDirection={"row"} alignItems={"center"} textAlign={"center"} justifyContent={"center"}>
-					<Text fontSize={25} textColor={"white"} fontWeight={"bold"}>D&D Manager</Text>
+					<Text fontSize={25} textColor={"white"} fontWeight={"bold"}></Text>
 				</Flex>
 
 				<Flex cursor={"pointer"} gap={0} fontSize={22} padding={0} textColor={"black"} flexDirection={"column"} alignItems={"center"}>
-					<Box  borderTop={"solid black 1px"} borderBottom={"solid black 1px"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/">Home</Link>
+					<Box color={"gray"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
+						<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome size={40} /></Link>
 					</Box>
-					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Magias</Link>
+					<Box height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
 					</Box>
-					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Tesouros</Link>
+					<Box  height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
 					</Box>
-					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Livros</Link>
+					<Box  height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
 					</Box>
-					<Box>
-						<Image marginTop={5} src={logo} width={250} />
-					</Box>
+					
 				</Flex>
 
 			</Flex>

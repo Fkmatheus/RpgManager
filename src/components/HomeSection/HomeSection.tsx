@@ -11,7 +11,7 @@ export function HomeSection() {
         width={"100%"}
         backgroundColor={"gray.900"}
         justifyContent={"center"}
-        marginLeft={"15%"}
+        marginLeft={"3%"}
       >
         <Flex width={"100%"} justifyContent={"center"}>
           <Box display={"flex"} flexDirection={"row"} width={"90%"} justifyContent={"center"}>
