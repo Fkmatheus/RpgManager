@@ -16,6 +16,11 @@ export function HomeSection() {
         <Flex width={"100%"} justifyContent={"center"}>
           <Box display={"flex"} flexDirection={"row"} width={"90%"} justifyContent={"center"}>
             <Box
+              _hover={{
+                transform: "scale(1.03)",
+                opacity: "0.7",
+                cursor: "pointer"
+              }}
               marginTop={3}
               border={"solid 1px black"}
               width={"60%"}
@@ -43,6 +48,11 @@ export function HomeSection() {
               height={"95vh"}
             >
               <Box
+                _hover={{
+                  transform: "scale(1.05)",
+                  opacity: "0.7",
+                  cursor: "pointer"
+                }}
                 border={"solid 1px black"}
                 height={"46vh"}
                 width={"100%"}
@@ -60,6 +70,11 @@ export function HomeSection() {
                 <Text marginTop={"2.5%"} textAlign={"left"} marginLeft={5} fontFamily={'Cinzel'} fontSize={15} color={"gray.300"}>Role seus diferentes tipos possiveis de itens mágicos, dê aquele upgrade super importante em seu personagem e deixe seu mestre de cabelos arrepiados.</Text>
               </Box>
               <Box
+                _hover={{
+                  transform: "scale(1.05)",
+                  opacity: "0.7",
+                  cursor: "pointer"
+                }}
                 border={"solid 1px black"}
                 height={"46vh"}
                 width={"100%"}

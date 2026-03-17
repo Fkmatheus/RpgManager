@@ -17,13 +17,16 @@ export function Header() {
 						<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/">Home</Link>
 					</Box>
 					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/test">Magias</Link>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Magias</Link>
 					</Box>
 					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/test">Tesouros</Link>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Tesouros</Link>
+					</Box>
+					<Box borderBottom={"solid black 1px"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
+						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/">Livros</Link>
 					</Box>
 					<Box>
-						<Image marginTop={10} src={logo} width={250} />
+						<Image marginTop={5} src={logo} width={250} />
 					</Box>
 				</Flex>
 
