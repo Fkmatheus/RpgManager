@@ -164,25 +164,15 @@ export function HomeSection() {
           marginTop={10}
           marginLeft={"6.5%"}
           display={"flex"}
-          flexDirection={"column"}
+          flexDirection={"row"}
           width={"88.5%"}
-          justifyContent={"center"}
           backgroundColor={"green"}
           height={"80vh"}
         >
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
-          <Text>TESTE</Text>
+          <Box backgroundColor={"yellow"} height={"100%"} width={"59%"}>
+              
+          </Box>
+          <Box marginLeft={"2%"} backgroundColor={"blue"} height={"100%"} width={"39%"}></Box>
         </Box>
       </Flex>
     </>
