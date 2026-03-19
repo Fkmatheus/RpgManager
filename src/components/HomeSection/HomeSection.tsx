@@ -2,6 +2,8 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import logoArtTesouro from "../../img/art.png";
 import logoArtMagicos from "../../img/art2.png";
 import logoArtGemas from "../../img/art3.png";
+import logoArtMagias from "../../img/art4.png";
+import logoArtLivros from "../../img/art5.png";
 
 export function HomeSection() {
   return (
@@ -161,18 +163,70 @@ export function HomeSection() {
           </Box>
         </Flex>
         <Box
-          marginTop={10}
-          marginLeft={"6.5%"}
+          marginTop={"3%"}
+          marginLeft={"6.6%"}
           display={"flex"}
           flexDirection={"row"}
           width={"88.5%"}
-          backgroundColor={"green"}
-          height={"80vh"}
+          height={"90vh"}
         >
-          <Box backgroundColor={"yellow"} height={"100%"} width={"59%"}>
-              
+          <Box _hover={{
+            transform: "scale(1.03)",
+            opacity: "0.7",
+            cursor: "pointer",
+          }} border={"solid 1px black"} height={"100%"} width={"59%"} bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoArtMagias})`}
+            bgSize={"cover"}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"}>
+
+            <Text
+              fontWeight={"bold"}
+              marginTop={"46%"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={40}
+              color={"white"}
+            >
+              Lista de mágias
+            </Text>
+            <Text
+              marginTop={"2.5%"}
+              textAlign={"left"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={20}
+              color={"gray.300"}
+            >Explore feitiços incríveis, conjure poderes arcanos e domine os elementos com sua lista de magias personalizada.</Text>
+
           </Box>
-          <Box marginLeft={"2%"} backgroundColor={"blue"} height={"100%"} width={"39%"}></Box>
+          <Box _hover={{
+            transform: "scale(1.03)",
+            opacity: "0.7",
+            cursor: "pointer",
+          }} border={"solid 1px black"} height={"100%"} bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoArtLivros})`}
+            bgSize={"cover"}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"} marginLeft={"1.7%"} width={"39%"}>
+
+            <Text
+              fontWeight={"bold"}
+              marginTop={"80%"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={30}
+              color={"white"}
+            >
+              Livros
+            </Text>
+            <Text
+              marginTop={"2.5%"}
+              textAlign={"left"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={15}
+              color={"gray.300"}
+            >Mergulhe nos tomos essenciais do sistema! Descubra regras, monstros, magias e segredos épicos nos livros do jogador, mestre e criaturas.</Text>
+          </Box>
         </Box>
       </Flex>
     </>
