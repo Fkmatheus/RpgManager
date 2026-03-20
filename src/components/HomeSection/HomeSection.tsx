@@ -4,12 +4,13 @@ import logoArtMagicos from "../../img/art2.png";
 import logoArtGemas from "../../img/art3.png";
 import logoArtMagias from "../../img/art4.png";
 import logoArtLivros from "../../img/art5.png";
+import { Footer } from '../Footer/Footer';
 
 export function HomeSection() {
   return (
     <>
       <Flex
-        height={"200vh"}
+        height={"250vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
         // justifyContent={"center"}
@@ -228,6 +229,7 @@ export function HomeSection() {
             >Mergulhe nos tomos essenciais do sistema! Descubra regras, monstros, magias e segredos épicos nos livros do jogador, mestre e criaturas.</Text>
           </Box>
         </Box>
+        <Footer />
       </Flex>
     </>
   );

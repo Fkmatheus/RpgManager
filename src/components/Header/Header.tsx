@@ -1,7 +1,8 @@
 import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../../img/logo.png";
-import { FaHome } from "react-icons/fa";
+import icon from "../../img/icon.png";
+import { FaBook, FaHome, FaMagic } from "react-icons/fa";
+import { GiOpenTreasureChest } from "react-icons/gi";
 
 
 export function Header() {
@@ -14,19 +15,23 @@ export function Header() {
 				</Flex>
 
 				<Flex cursor={"pointer"} gap={0} fontSize={22} padding={0} textColor={"black"} flexDirection={"column"} alignItems={"center"}>
-					<Box color={"gray"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome size={40} /></Link>
+					<Box>
+						<Box color={"gray"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+							<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome size={40} /></Link>
+						</Box>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><GiOpenTreasureChest size={40} /></Link>
+						</Box>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaMagic size={40} /></Link>
+						</Box>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaBook size={40} /></Link>
+						</Box>
 					</Box>
-					<Box height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
+					<Box marginTop={"300%"}>
+						<Image src={icon}></Image>
 					</Box>
-					<Box  height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
-					</Box>
-					<Box  height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold", backgroundColor: "red.700" }}>
-						<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"></Link>
-					</Box>
-					
 				</Flex>
 
 			</Flex>
