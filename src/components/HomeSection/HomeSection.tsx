@@ -5,6 +5,7 @@ import logoArtGemas from "../../img/art3.png";
 import logoArtMagias from "../../img/art4.png";
 import logoArtLivros from "../../img/art5.png";
 import { Footer } from '../Footer/Footer';
+import { Link as RouterLink } from "react-router-dom";
 
 export function HomeSection() {
   return (
@@ -13,7 +14,6 @@ export function HomeSection() {
         height={"250vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
-        // justifyContent={"center"}
         flexDirection={"column"}
         marginLeft={"3%"}
       >
@@ -25,6 +25,8 @@ export function HomeSection() {
             justifyContent={"center"}
           >
             <Box
+              as={RouterLink}
+              to="/ObjetosDeArte"
               _hover={{
                 transform: "scale(1.03)",
                 opacity: "0.7",
