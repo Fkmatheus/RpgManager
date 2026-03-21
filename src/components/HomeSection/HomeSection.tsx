@@ -122,6 +122,8 @@ export function HomeSection() {
                 </Text>
               </Box>
               <Box
+                as={RouterLink}
+                to="/Gemas"
                 _hover={{
                   transform: "scale(1.05)",
                   opacity: "0.7",
