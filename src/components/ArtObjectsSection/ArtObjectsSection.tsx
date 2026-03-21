@@ -155,7 +155,8 @@ export function ArtObjectsSection() {
           </Box>
 
         </Box>
-        <Box
+
+        {/* <Box
           backgroundColor={"#161616"} overflowY="auto" css={{
             '&::-webkit-scrollbar': {
               display: 'none',
@@ -164,16 +165,40 @@ export function ArtObjectsSection() {
             'scrollbar-width': 'none',
           }}
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"32.5%"}
+          width={"41%"}
           height={"52vh"}
           border={"solid 1px black"}>
           <Box display={"flex"} flexDirection={"row"} fontSize={20} alignItems={"center"} textAlign={"center"} fontWeight={"bold"} fontFamily={'Cinzel'} color={"white"} width={"100%"} height={"6vh"} backgroundColor={"#111111"} justifyContent={"space-between"}>
             <Text marginLeft={3}>Objetos de arte [7500po]</Text>
             <Button marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
           </Box>
-          <DefaultTable dice='d8' type='Objetos' data={objects_7500po} fontSize={16} />
+          <DefaultTable dice='d8' type='Objetos' data={objects_7500po} />
+          </Box> */}
+
+        <Box
+          marginTop={"5%"}
+          marginLeft={"10%"}
+          width={"85%"}
+          height={"62vh"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"center"}
+        >
+          <Box backgroundColor={"#161616"} overflowY="auto" css={{
+            '&::-webkit-scrollbar': {
+              display: 'none',
+            },
+            '-ms-overflow-style': 'none',
+            'scrollbar-width': 'none',
+          }} width={"48%"} height={"62vh"} border={"solid 1px black"}>
+            <Box display={"flex"} flexDirection={"row"} fontSize={20} alignItems={"center"} textAlign={"center"} fontWeight={"bold"} fontFamily={'Cinzel'} color={"white"} width={"100%"} height={"6vh"} backgroundColor={"#111111"} justifyContent={"space-between"}>
+              <Text marginLeft={3}>Objetos de arte [7500po]</Text>
+              <Button marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
+            </Box>
+            <DefaultTable dice='d8' type='Objetos' data={objects_7500po} />
           </Box>
+        </Box>
         <Footer />
       </Flex>
     </>
