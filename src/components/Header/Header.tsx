@@ -16,16 +16,16 @@ export function Header() {
 
 				<Flex cursor={"pointer"} gap={0} fontSize={22} padding={0} textColor={"black"} flexDirection={"column"} alignItems={"center"}>
 					<Box>
-						<Box color={"gray"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+						<Box color={"gray"} marginTop={"20%"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
 							<Link _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome size={40} /></Link>
 						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
 							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><GiOpenTreasureChest size={40} /></Link>
 						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
 							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaMagic size={40} /></Link>
 						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "white", fontWeight: "bold" }}>
+						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
 							<Link as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaBook size={40} /></Link>
 						</Box>
 					</Box>

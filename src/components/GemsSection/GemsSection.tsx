@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { ItemTableCard } from "../ItemTableCard/ItemTableCard";
+import { Footer } from "../Footer/Footer";
 
 const gems_10po = [
   { id: 1, d10: 1, name: "Azurita" },
@@ -72,56 +73,58 @@ const gems_5000po = [
 ];
 
 export function GemsSection() {
-    return (
-        <Flex height={"285vh"}
-            width={"100%"}
-            backgroundColor={"gray.900"}
-            flexDirection={"column"}
-            marginLeft={"3%"}
-            fontFamily={'Cinzel'}>
+  return (
+    <>
+      <Flex height={"285vh"}
+        width={"100%"}
+        backgroundColor={"gray.900"}
+        flexDirection={"column"}
+        marginLeft={"3%"}
+        fontFamily={'Cinzel'}>
 
-            <Box
-                marginTop={"5%"}
-                marginLeft={"10%"}
-                width={"85%"}
-                height={"62vh"}
-                display={"flex"}
-                flexDirection={"row"}
-                justifyContent={"space-between"}
-            >
-                <ItemTableCard tableName='Gemas [10po]' data={gems_10po} type='Gemas' dice="D12"/>
-                <ItemTableCard tableName='Gemas [50po]' data={gems_50po} type='Gemas' dice="D12"/>
+        <Box
+          marginTop={"5%"}
+          marginLeft={"10%"}
+          width={"85%"}
+          height={"62vh"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+        >
+          <ItemTableCard tableName='Gemas [10po]' data={gems_10po} type='Gemas' dice="D12" />
+          <ItemTableCard tableName='Gemas [50po]' data={gems_50po} type='Gemas' dice="D12" />
 
-            </Box>
+        </Box>
 
-            <Box
-                marginTop={"5%"}
-                marginLeft={"10%"}
-                width={"85%"}
-                height={"62vh"}
-                display={"flex"}
-                flexDirection={"row"}
-                justifyContent={"space-between"}
-            >
-                <ItemTableCard tableName='Gemas [100po]' data={gems_100po} type='Gemas' dice="D10"/>
-                <ItemTableCard tableName='Gemas [500po]' data={gems_500po} type='Gemas' dice="D6"/>
+        <Box
+          marginTop={"5%"}
+          marginLeft={"10%"}
+          width={"85%"}
+          height={"62vh"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+        >
+          <ItemTableCard tableName='Gemas [100po]' data={gems_100po} type='Gemas' dice="D10" />
+          <ItemTableCard tableName='Gemas [1000po]' data={gems_1000po} type='Gemas' dice="D6" />
 
-            </Box>
+        </Box>
 
-            <Box
-                marginTop={"5%"}
-                marginLeft={"10%"}
-                width={"85%"}
-                height={"62vh"}
-                display={"flex"}
-                flexDirection={"row"}
-                justifyContent={"space-between"}
-            >
-                <ItemTableCard tableName='Gemas [1000po]' data={gems_1000po} type='Gemas' dice="D8"/>
-                <ItemTableCard tableName='Gemas [5000po]' data={gems_5000po} type='Gemas' dice="D4"/>
+        <Box
+          marginTop={"5%"}
+          marginLeft={"10%"}
+          width={"85%"}
+          height={"62vh"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+        >
+          <ItemTableCard tableName='Gemas [500po]' data={gems_500po} type='Gemas' dice="D8" height="46vh" />
+          <ItemTableCard tableName='Gemas [5000po]' data={gems_5000po} type='Gemas' dice="D4" height="46vh" />
 
-            </Box>
-
-        </Flex>
-    )
+        </Box>
+      <Footer/>
+      </Flex>
+    </>
+  )
 }

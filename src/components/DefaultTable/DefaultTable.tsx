@@ -27,14 +27,14 @@ export function DefaultTable({dice, type, data, fontSize}: DefaultTableProps) {
       <Table size="sm" variant="unstyled" color={"white"} backgroundColor={"#161616"}>
         <Thead>
           <Tr>
-            <Th  textAlign={"center"} borderRight={"solid black 1px"}>{dice}</Th>
+            <Th width={"20px"}  textAlign={"center"} borderRight={"solid black 1px"}>{dice}</Th>
             <Th>{type}</Th>
           </Tr>
         </Thead>
 
         <Tbody>
           {data.map((item) => (
-            <Tr key={item.id}>
+            <Tr key={item.id} _hover={{backgroundColor: "#272727", fontWeight: "bold", color: "tomato"}}>
               <Td fontSize={fontSize ? fontSize : 13} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.d10}</Td>
               <Td fontSize={fontSize ? fontSize : 13}>{item.name}</Td>
             </Tr>
