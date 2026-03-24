@@ -6,19 +6,26 @@ import Confetti from "react-confetti";
 
 interface TableItem {
     id: number;
-    d10: number;
+    dice: number;
+    name: string;
+}
+
+interface TableItemString {
+    id: number;
+    dice: string;
     name: string;
 }
 
 interface ItemTableCardProps {
     tableName: string;
-    data: TableItem[];
+    data: TableItem[] | TableItemString[];
     type: string;
     dice?: string;
-    height?: string
+    height?: string;
+    width?: string;
 }
 
-export function ItemTableCard({ tableName, data, dice, type, height }: ItemTableCardProps) {
+export function ItemTableCard({ tableName, data, dice, type, height, width }: ItemTableCardProps) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [loading, setLoading] = useState(false);
     const [showConfetti, setShowConfetti] = useState(false);
@@ -29,7 +36,7 @@ export function ItemTableCard({ tableName, data, dice, type, height }: ItemTable
             },
             '-ms-overflow-style': 'none',
             'scrollbar-width': 'none',
-        }} width={"48%"} height={height ? height : "62vh"} border={"solid 1px black"}>
+        }} width={width ? width : "48%" } height={height ? height : "62vh"} border={"solid 1px black"}>
             <Box display={"flex"} flexDirection={"row"} fontSize={20} alignItems={"center"} textAlign={"center"} fontWeight={"bold"} color={"white"} width={"100%"} height={"6vh"} backgroundColor={"#111111"} justifyContent={"space-between"}>
                 <Text marginLeft={3}>{tableName}</Text>
                 <Button onClick={() => {
