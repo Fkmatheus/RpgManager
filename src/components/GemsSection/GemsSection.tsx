@@ -75,7 +75,7 @@ const gems_5000po = [
 export function GemsSection() {
   return (
     <>
-      <Flex height={"225vh"}
+      <Flex height={"200vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
         flexDirection={"column"}
@@ -83,7 +83,7 @@ export function GemsSection() {
         fontFamily={'Cinzel'}>
 
         <Box
-          marginTop={"5%"}
+          marginTop={"2%"}
           marginLeft={"5%"}
           width={"90%"}
           height={"62vh"}

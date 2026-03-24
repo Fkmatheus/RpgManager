@@ -79,7 +79,7 @@ export function ArtObjectsSection() {
         fontFamily={'Cinzel'}
       >
         <Box
-          marginTop={"5%"}
+          marginTop={"2%"}
           marginLeft={"5%"}
           width={"90%"}
           height={"62vh"}
