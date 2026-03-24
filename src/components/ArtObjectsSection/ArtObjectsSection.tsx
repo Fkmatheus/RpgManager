@@ -80,8 +80,8 @@ export function ArtObjectsSection() {
       >
         <Box
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"5%"}
+          width={"90%"}
           height={"62vh"}
           display={"flex"}
           flexDirection={"row"}
@@ -94,8 +94,8 @@ export function ArtObjectsSection() {
 
         <Box
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"5%"}
+          width={"90%"}
           height={"62vh"}
           display={"flex"}
           flexDirection={"row"}
@@ -108,8 +108,8 @@ export function ArtObjectsSection() {
 
         <Box
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"5%"}
+          width={"90%"}
           height={"62vh"}
           display={"flex"}
           flexDirection={"row"}

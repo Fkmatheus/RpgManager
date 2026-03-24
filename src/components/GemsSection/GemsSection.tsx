@@ -75,7 +75,7 @@ const gems_5000po = [
 export function GemsSection() {
   return (
     <>
-      <Flex height={"285vh"}
+      <Flex height={"225vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
         flexDirection={"column"}
@@ -84,43 +84,31 @@ export function GemsSection() {
 
         <Box
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"5%"}
+          width={"90%"}
           height={"62vh"}
           display={"flex"}
           flexDirection={"row"}
           justifyContent={"space-between"}
         >
-          <ItemTableCard tableName='Gemas [10po]' data={gems_10po} type='Gemas' dice="D12" />
-          <ItemTableCard tableName='Gemas [50po]' data={gems_50po} type='Gemas' dice="D12" />
+          <ItemTableCard tableName='Gemas [10po]' data={gems_10po} type='Gemas' dice="D12" width="32%" />
+          <ItemTableCard tableName='Gemas [50po]' data={gems_50po} type='Gemas' dice="D12" width="32%" />
+          <ItemTableCard tableName='Gemas [100po]' data={gems_100po} type='Gemas' dice="D10" width="32%"/>
 
         </Box>
 
         <Box
           marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
+          marginLeft={"5%"}
+          width={"90%"}
           height={"62vh"}
           display={"flex"}
           flexDirection={"row"}
           justifyContent={"space-between"}
         >
-          <ItemTableCard tableName='Gemas [100po]' data={gems_100po} type='Gemas' dice="D10" />
-          <ItemTableCard tableName='Gemas [1000po]' data={gems_1000po} type='Gemas' dice="D6" />
-
-        </Box>
-
-        <Box
-          marginTop={"5%"}
-          marginLeft={"10%"}
-          width={"85%"}
-          height={"62vh"}
-          display={"flex"}
-          flexDirection={"row"}
-          justifyContent={"space-between"}
-        >
-          <ItemTableCard tableName='Gemas [500po]' data={gems_500po} type='Gemas' dice="D8" height="46vh" />
-          <ItemTableCard tableName='Gemas [5000po]' data={gems_5000po} type='Gemas' dice="D4" height="46vh" />
+          <ItemTableCard tableName='Gemas [500po]' data={gems_500po} type='Gemas' dice="D8" width="32%" height="52vh"/>
+          <ItemTableCard tableName='Gemas [1000po]' data={gems_1000po} type='Gemas' dice="D6" width="32%" height="52vh"/>
+          <ItemTableCard tableName='Gemas [5000po]' data={gems_5000po} type='Gemas' dice="D4"  width="32%" height="52vh"/>
 
         </Box>
       <Footer/>
