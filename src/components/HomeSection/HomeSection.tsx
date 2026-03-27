@@ -4,6 +4,8 @@ import logoArtMagicos from "../../img/art2.png";
 import logoArtGemas from "../../img/art3.png";
 import logoArtMagias from "../../img/art4.png";
 import logoArtLivros from "../../img/art5.png";
+import logoPilhaTesouro from "../../img/art6.png"
+import logoDiarioCampanha from "../../img/art7.png"
 import { Footer } from '../Footer/Footer';
 import { Link as RouterLink } from "react-router-dom";
 
@@ -11,7 +13,7 @@ export function HomeSection() {
   return (
     <>
       <Flex
-        height={"250vh"}
+        height={"320vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
         flexDirection={"column"}
@@ -52,7 +54,7 @@ export function HomeSection() {
                 marginTop={"45%"}
                 marginLeft={5}
                 fontFamily={"Cinzel"}
-                fontSize={40}
+                fontSize={35}
                 color={"white"}
               >
                 Objetos de arte
@@ -63,7 +65,7 @@ export function HomeSection() {
                 marginLeft={5}
                 fontFamily={"Cinzel"}
                 fontSize={20}
-                color={"gray.300"}
+                color={"gray.200"}
               >
                 Role seus diferentes tipos possiveis de objetos de arte
                 valiosos. As possibilidades são extremamente variadas, desde a
@@ -111,12 +113,12 @@ export function HomeSection() {
                   Itens mágicos
                 </Text>
                 <Text
-                  marginTop={"2.5%"}
+                  marginTop={"1.5%"}
                   textAlign={"left"}
                   marginLeft={5}
                   fontFamily={"Cinzel"}
                   fontSize={15}
-                  color={"gray.300"}
+                  color={"gray.200"}
                 >
                   Role seus diferentes tipos possiveis de itens mágicos, dê
                   aquele upgrade super importante em seu personagem e deixe seu
@@ -160,7 +162,7 @@ export function HomeSection() {
                   marginLeft={5}
                   fontFamily={"Cinzel"}
                   fontSize={15}
-                  color={"gray.300"}
+                  color={"gray.200"}
                 >
                   Role seus diferentes tipos possiveis de Gemas, consiga muito
                   ouro vendendo ou simplesmente utilize elas e fique radiante!.
@@ -188,10 +190,10 @@ export function HomeSection() {
 
             <Text
               fontWeight={"bold"}
-              marginTop={"46%"}
+              marginTop={"40%"}
               marginLeft={5}
               fontFamily={"Cinzel"}
-              fontSize={40}
+              fontSize={35}
               color={"white"}
             >
               Lista de mágias
@@ -202,7 +204,7 @@ export function HomeSection() {
               marginLeft={5}
               fontFamily={"Cinzel"}
               fontSize={20}
-              color={"gray.300"}
+              color={"gray.200"}
             >Explore feitiços incríveis, conjure poderes arcanos e domine os elementos com sua lista de magias personalizada.</Text>
 
           </Box>
@@ -217,7 +219,7 @@ export function HomeSection() {
 
             <Text
               fontWeight={"bold"}
-              marginTop={"80%"}
+              marginTop={"70%"}
               marginLeft={5}
               fontFamily={"Cinzel"}
               fontSize={30}
@@ -233,6 +235,73 @@ export function HomeSection() {
               fontSize={15}
               color={"gray.300"}
             >Mergulhe nos tomos essenciais do sistema! Descubra regras, monstros, magias e segredos épicos nos livros do jogador, mestre e criaturas.</Text>
+          </Box>
+        </Box>
+        <Box
+          marginTop={"3%"}
+          marginLeft={"6.6%"}
+          display={"flex"}
+          flexDirection={"row"}
+          width={"88.5%"}
+          height={"80vh"}
+        >
+          <Box _hover={{
+            transform: "scale(1.03)",
+            opacity: "0.7",
+            cursor: "pointer",
+          }} border={"solid 1px black"} height={"100%"} width={"59%"} bgImage={`linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${logoPilhaTesouro})`}
+            bgSize={"cover"}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"}>
+
+            <Text
+              fontWeight={"bold"}
+              marginTop={"38%"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={35}
+              color={"white"}
+            >
+              Pilha de Tesouro
+            </Text>
+            <Text
+              marginTop={"2.5%"}
+              textAlign={"left"}
+              marginLeft={5}
+              fontFamily={"Cinzel"}
+              fontSize={20}
+              color={"gray.200"}
+            >Explore uma pilha lendária de gemas, artefatos mágicos e riquezas esquecidas — o verdadeiro coração da aventura.</Text>
+          </Box>
+          <Box _hover={{
+            transform: "scale(1.03)",
+            opacity: "0.7",
+            cursor: "pointer",
+          }} border={"solid 1px black"} height={"100%"} bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoDiarioCampanha})`}
+            bgSize={"cover"}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"} marginLeft={"1.7%"} width={"39%"}
+            >
+
+            <Text
+              fontWeight={"bold"}
+              marginTop={"65%"}
+              marginLeft={4}
+              fontFamily={"Cinzel"}
+              fontSize={30}
+              color={"white"}
+            >
+              Diário de Campanha
+            </Text>
+            <Text
+              marginTop={"2.5%"}
+              textAlign={"left"}
+              marginLeft={4}
+              fontFamily={"Cinzel"}
+              fontSize={15}
+              color={"gray.200"}
+            >
+              Registros das sessões de aventura com resumos, momentos épicos e decisões que moldam a jornada.</Text>
           </Box>
         </Box>
         <Footer />
