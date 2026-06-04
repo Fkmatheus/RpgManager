@@ -10,32 +10,23 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react"
 import { DefaultModal } from "../DefaultModal/DefaultModal";
-
-interface TableItem {
-  id: number;
-  dice: number;
-  name: string;
-}
-
-interface TableItemString {
-  id: number;
-  dice: string;
-  name: string;
-}
+import type { TableItemDefault } from "../../types/TableItemDefault"
 
 interface DefaultTableProps {
   dice: string;
   type: string;
-  data: TableItem[] | TableItemString[];
+  data: TableItemDefault[];
   fontSize?: number;
 }
 
 export function DefaultTable({ dice, type, data, fontSize }: DefaultTableProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [itemName, setItemName] = useState("");
+  const [itemId, setItemId] = useState<number|undefined>(undefined);
 
-  function handleOpenModal(item: string) {
+  function handleOpenModal(item: string, id: number) {
     setItemName(item);
+    setItemId(id);
     onOpen();
   }
   return (
@@ -51,16 +42,16 @@ export function DefaultTable({ dice, type, data, fontSize }: DefaultTableProps) 
 
           <Tbody>
             {data.map((item) => (
-              <Tr key={item.id} onClick={() => handleOpenModal(item.name)} cursor={"pointer"} _hover={{ backgroundColor: "#272727", fontWeight: "bold", color: "tomato" }}>
+              <Tr key={item.id} onClick={() => handleOpenModal(item.title, item.id)} cursor={"pointer"} _hover={{ backgroundColor: "#272727", fontWeight: "bold", color: "tomato" }}>
                 <Td fontSize={fontSize ? fontSize : 13} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.dice}</Td>
-                <Td fontSize={fontSize ? fontSize : 13} whiteSpace="normal" maxW="200px">{item.name}</Td>
+                <Td fontSize={fontSize ? fontSize : 13} whiteSpace="normal" maxW="200px">{item.title}</Td>
               </Tr>
             ))}
           </Tbody>
         </Table>
       </TableContainer>
 
-      <DefaultModal isOpen={isOpen} itemName={itemName} onClose={onClose}/>
+      <DefaultModal id={itemId} isOpen={isOpen} itemName={itemName} onClose={onClose}/>
     </>
   );
 }

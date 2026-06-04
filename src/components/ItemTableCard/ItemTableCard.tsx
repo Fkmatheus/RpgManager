@@ -3,22 +3,11 @@ import { DefaultTable } from "../DefaultTable/DefaultTable";
 import { FaDiceD20 } from "react-icons/fa";
 import { useState } from "react";
 import { ItemRollModal } from "../ItemRollModal/ItemRollModal";
-
-interface TableItem {
-    id: number;
-    dice: number;
-    name: string;
-}
-
-interface TableItemString {
-    id: number;
-    dice: string;
-    name: string;
-}
+import type { TableItemDefault } from "../../types/TableItemDefault"
 
 interface ItemTableCardProps {
     tableName: string;
-    data: TableItem[] | TableItemString[];
+    data: TableItemDefault[]
     type: string;
     dice?: string;
     height?: string;
@@ -29,6 +18,31 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [loading, setLoading] = useState(false);
     const [showConfetti, setShowConfetti] = useState(false);
+    let intDice = 0;
+
+    switch (dice) {
+        case 'D4':
+            intDice = 4
+            break
+        
+        case 'D6':
+            intDice = 6
+            break
+        
+        case 'D8':
+            intDice = 8
+            break
+        
+        case 'D10':
+            intDice = 10
+            break
+        
+        case 'D12':
+            intDice = 12
+            break
+    }
+
+
     return (
         <Box backgroundColor={"#161616"} overflowY="auto" css={{
             '&::-webkit-scrollbar': {
@@ -49,13 +63,13 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
 
                         setTimeout(() => {
                             setShowConfetti(false);
-                        }, 8000);
-                    }, 2000);
+                        }, 4000);
+                    }, 1000);
                 }} marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
             </Box>
             <DefaultTable dice={dice ? dice : 'd10'} type={type} data={data} />
 
-            <ItemRollModal isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading} showConfetti={showConfetti}/>
+            <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading} showConfetti={showConfetti}/>
         </Box>
     )
 }

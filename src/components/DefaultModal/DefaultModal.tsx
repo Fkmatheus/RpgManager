@@ -10,21 +10,40 @@ import {
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
-
-import imgPocaoGigante from "../../img/pocaoGigante.png";
+import type { Gem } from "../../types/Gem";
+import { useState, useEffect } from "react";
+import { GemsService } from "../../services/gemsService";
 
 interface DefaultModalProps {
   isOpen: boolean;
   onClose: () => void;
   itemName: string;
+  id: number | undefined;
 }
 
-export function DefaultModal({ isOpen, onClose, itemName }: DefaultModalProps) {
+export function DefaultModal({id, isOpen, onClose, itemName }: DefaultModalProps) {
+  const [result, setResult] = useState<Gem | null>(null);
+
+  useEffect(() => {
+      async function searchGem() {
+        const data = await GemsService.search10(id);
+        setResult(data);
+      
+      }
+  
+      if (isOpen) {
+        searchGem();
+      }
+    }, [isOpen]);
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
       <ModalOverlay />
       <ModalContent fontFamily={"Cinzel"}>
-        <ModalHeader color={"white"} backgroundColor={"#111111"}>
+        <ModalHeader backgroundColor={"#111111"} fontSize="18px"
+          fontWeight="bold"
+          color="tomato"
+          letterSpacing="1px">
           {itemName}
         </ModalHeader>
         <ModalCloseButton />
@@ -42,16 +61,8 @@ export function DefaultModal({ isOpen, onClose, itemName }: DefaultModalProps) {
             justifyContent={"space-between"}
           >
             <Box
-              width={"46%"}
-              border={"solid 1px black"}
-              bgImage={`linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${imgPocaoGigante})`}
-              bgSize={"cover"}
-              bgPosition={"center"}
-              bgRepeat={"no-repeat"}
-            ></Box>
-            <Box
-              width={"46%"}
-              height={"40vh"}
+              width={"100%"}
+              height={"100%"}
               overflowY="auto"
               sx={{
                 "&::-webkit-scrollbar": {
@@ -61,16 +72,9 @@ export function DefaultModal({ isOpen, onClose, itemName }: DefaultModalProps) {
                 scrollbarWidth: "none",
               }}
             >
-              {" "}
               <Text>
-                Quando bebe esta poção, seu valor de Força muda por 1 hora. O
-                tipo de gigante determinar o valor (veja na tabela abaixo). A
-                poção não produz efeito em você caso sua Força seja igual ou
-                maior que o valor dela. O líquido transparente dessa poção tem
-                um pedaço de unha de um gigante do tipo apropriado flutuando
-                nele. A poção de força do gigante do gelo e a poção de força do
-                gigante de pedra têm o mesmo efeito.
-              </Text>{" "}
+                {result?.description}
+              </Text>
             </Box>
           </Box>
         </ModalBody>
