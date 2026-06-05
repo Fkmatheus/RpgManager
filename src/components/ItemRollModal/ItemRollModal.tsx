@@ -16,8 +16,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
   const [result, setResult] = useState<Gem | null>(null);
   const [diceRoll, setDiceRoll] = useState<number>(1);
   const imagePath = `/img/${tableName}/${result?.id}.png`;
-  console.log(imagePath);
-
+  
   useEffect(() => {
     async function loadRoll() {
       const roll = Math.floor(Math.random() * intDice) + 1;

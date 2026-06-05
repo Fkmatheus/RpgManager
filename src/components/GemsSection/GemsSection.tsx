@@ -69,8 +69,8 @@ export function GemsSection() {
           flexDirection={"row"}
           justifyContent={"space-between"}
         >
-          <ItemTableCard tableName='Gemas [500po]' data={gems500} type='Gemas' dice="D8" width="32%" height="52vh" />
-          <ItemTableCard tableName='Gemas [1000po]' data={gems1000} type='Gemas' dice="D6" width="32%" height="52vh" />
+          <ItemTableCard tableName='Gemas [500po]' data={gems500} type='Gemas' dice="D6" width="32%" height="52vh" />
+          <ItemTableCard tableName='Gemas [1000po]' data={gems1000} type='Gemas' dice="D8" width="32%" height="52vh" />
           <ItemTableCard tableName='Gemas [5000po]' data={gems5000} type='Gemas' dice="D4" width="32%" height="52vh" />
 
         </Box>
