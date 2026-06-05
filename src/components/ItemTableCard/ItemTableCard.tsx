@@ -17,7 +17,6 @@ interface ItemTableCardProps {
 export function ItemTableCard({ tableName, data, dice, type, height, width }: ItemTableCardProps) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [loading, setLoading] = useState(false);
-    const [showConfetti, setShowConfetti] = useState(false);
     let intDice = 0;
 
     switch (dice) {
@@ -59,17 +58,16 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
 
                     setTimeout(() => {
                         setLoading(false);
-                        setShowConfetti(true);
 
                         setTimeout(() => {
-                            setShowConfetti(false);
+                            
                         }, 4000);
                     }, 1000);
                 }} marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
             </Box>
             <DefaultTable dice={dice ? dice : 'd10'} type={type} data={data} />
 
-            <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading} showConfetti={showConfetti}/>
+            <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading}/>
         </Box>
     )
 }
