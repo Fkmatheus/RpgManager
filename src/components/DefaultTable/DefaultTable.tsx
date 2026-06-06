@@ -16,10 +16,11 @@ interface DefaultTableProps {
   dice: string;
   type: string;
   data: TableItemDefault[];
+  tableName: string
   fontSize?: number;
 }
 
-export function DefaultTable({ dice, type, data, fontSize }: DefaultTableProps) {
+export function DefaultTable({tableName, dice, type, data, fontSize }: DefaultTableProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [itemName, setItemName] = useState("");
   const [itemId, setItemId] = useState<number|undefined>(undefined);
@@ -51,7 +52,7 @@ export function DefaultTable({ dice, type, data, fontSize }: DefaultTableProps) 
         </Table>
       </TableContainer>
 
-      <DefaultModal id={itemId} isOpen={isOpen} itemName={itemName} onClose={onClose}/>
+      <DefaultModal tableName={tableName} id={itemId} isOpen={isOpen} itemName={itemName} onClose={onClose}/>
     </>
   );
 }

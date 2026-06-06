@@ -18,11 +18,13 @@ interface DefaultModalProps {
   isOpen: boolean;
   onClose: () => void;
   itemName: string;
+  tableName: string;
   id: number | undefined;
 }
 
-export function DefaultModal({id, isOpen, onClose, itemName }: DefaultModalProps) {
+export function DefaultModal({id, isOpen, onClose, itemName, tableName }: DefaultModalProps) {
   const [result, setResult] = useState<Gem | null>(null);
+  const imagePath = `/img/${tableName}/${result?.id}.png`;
 
   useEffect(() => {
       async function searchGem() {
@@ -40,9 +42,9 @@ export function DefaultModal({id, isOpen, onClose, itemName }: DefaultModalProps
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
       <ModalOverlay />
       <ModalContent fontFamily={"Cinzel"}>
-        <ModalHeader backgroundColor={"#111111"} fontSize="18px"
+        <ModalHeader backgroundColor={"#111111"} fontSize="20px"
           fontWeight="bold"
-          color="tomato"
+          color="white"
           letterSpacing="1px">
           {itemName}
         </ModalHeader>
@@ -57,9 +59,12 @@ export function DefaultModal({id, isOpen, onClose, itemName }: DefaultModalProps
           <Box
             width={"100%"}
             display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"space-between"}
+            flexDirection={"column"}
+            // justifyContent={"space-between"}
           >
+            <Box>
+              <img width={"550px"} src={imagePath} alt={result?.title} />
+            </Box>
             <Box
               width={"100%"}
               height={"100%"}
@@ -71,6 +76,7 @@ export function DefaultModal({id, isOpen, onClose, itemName }: DefaultModalProps
                 msOverflowStyle: "none",
                 scrollbarWidth: "none",
               }}
+              marginTop={5}
             >
               <Text>
                 {result?.description}

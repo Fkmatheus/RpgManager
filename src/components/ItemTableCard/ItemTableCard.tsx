@@ -65,7 +65,7 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
                     }, 1000);
                 }} marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
             </Box>
-            <DefaultTable dice={dice ? dice : 'd10'} type={type} data={data} />
+            <DefaultTable tableName={tableName} dice={dice ? dice : 'd10'} type={type} data={data} />
 
             <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading}/>
         </Box>
