@@ -9,7 +9,7 @@ interface ItemTableCardProps {
     tableName: string;
     data: TableItemDefault[]
     type: string;
-    dice?: string;
+    dice: string;
     height?: string;
     width?: string;
 }

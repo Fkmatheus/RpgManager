@@ -13,6 +13,8 @@ import {
 import type { Gem } from "../../types/Gem";
 import { useState, useEffect } from "react";
 import { GemsService } from "../../services/gemsService";
+import type { artObj } from "../../types/ArtObj";
+import { ObjArtService } from "../../services/artObjService";
 
 interface DefaultModalProps {
   isOpen: boolean;
@@ -23,7 +25,7 @@ interface DefaultModalProps {
 }
 
 export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: DefaultModalProps) {
-  const [result, setResult] = useState<Gem | null>(null);
+  const [result, setResult] = useState<Gem | artObj | null>(null);
   const imagePath = `/img/${tableName}/${result?.id}.png`;
 
   useEffect(() => {
@@ -34,22 +36,22 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
           const data = await GemsService.search10(id);
           setResult(data);
           break
-        
+
         case "Gemas [50po]":
           const data50 = await GemsService.search50(id);
           setResult(data50);
           break
-        
+
         case "Gemas [100po]":
           const data100 = await GemsService.search100(id);
           setResult(data100);
           break
-        
+
         case "Gemas [500po]":
           const data500 = await GemsService.search500(id);
           setResult(data500);
           break
-        
+
         case "Gemas [1000po]":
           const data1000 = await GemsService.search1000(id);
           setResult(data1000);
@@ -58,6 +60,31 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
         case "Gemas [5000po]":
           const data5000 = await GemsService.search5000(id);
           setResult(data5000);
+          break
+
+        case "Objetos de arte [25po]":
+          const dataArt25 = await ObjArtService.search25(id);
+          setResult(dataArt25);
+          break
+
+        case "Objetos de arte [250po]":
+          const dataArt250 = await ObjArtService.search250(id);
+          setResult(dataArt250);
+          break
+
+        case "Objetos de arte [750po]":
+          const dataArt750 = await ObjArtService.search750(id);
+          setResult(dataArt750);
+          break
+
+        case "Objetos de arte [2500po]":
+          const dataArt2500 = await ObjArtService.search2500(id);
+          setResult(dataArt2500);
+          break
+
+        case "Objetos de arte [7500po]":
+          const dataArt7500 = await ObjArtService.search7500(id);
+          setResult(dataArt7500);
           break
       }
 

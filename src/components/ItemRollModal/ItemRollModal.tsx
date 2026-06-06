@@ -2,6 +2,7 @@ import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOve
 import { useEffect, useState } from "react";
 import type { Gem } from "../../types/Gem";
 import { GemsService } from "../../services/gemsService";
+import { ObjArtService } from "../../services/artObjService";
 import { FaDiceD20 } from 'react-icons/fa';
 
 interface ItemRollModal {
@@ -16,7 +17,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
   const [result, setResult] = useState<Gem | null>(null);
   const [diceRoll, setDiceRoll] = useState<number>(1);
   const imagePath = `/img/${tableName}/${result?.id}.png`;
-  
+
   useEffect(() => {
     async function loadRoll() {
       const roll = Math.floor(Math.random() * intDice) + 1;
@@ -51,6 +52,31 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
         case "Gemas [5000po]":
           const data5000 = await GemsService.roll5000(roll);
           setResult(data5000);
+          break
+
+        case "Objetos de arte [25po]":
+          const dataArt25 = await ObjArtService.roll25(roll);
+          setResult(dataArt25);
+          break
+
+        case "Objetos de arte [250po]":
+          const dataArt250 = await ObjArtService.roll250(roll);
+          setResult(dataArt250);
+          break
+
+        case "Objetos de arte [750po]":
+          const dataArt750 = await ObjArtService.roll750(roll);
+          setResult(dataArt750);
+          break
+
+        case "Objetos de arte [2500po]":
+          const dataArt2500 = await ObjArtService.roll2500(roll);
+          setResult(dataArt2500);
+          break
+
+        case "Objetos de arte [7500po]":
+          const dataArt7500 = await ObjArtService.roll7500(roll);
+          setResult(dataArt7500);
           break
       }
 
