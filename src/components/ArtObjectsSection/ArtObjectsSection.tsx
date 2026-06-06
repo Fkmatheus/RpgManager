@@ -7,32 +7,32 @@ import { ObjArtService } from "../../services/artObjService"
 
 export function ArtObjectsSection() {
   const [art25, setArt25] = useState<artObj[]>([]);
-    const [art250, setArt250] = useState<artObj[]>([]);
-    const [art750, setArt750] = useState<artObj[]>([]);
-    const [art2500, setArt2500] = useState<artObj[]>([]);
-    const [art7500, setArt7500] = useState<artObj[]>([]);
-  
-    useEffect(() => {
-      async function loadGems() {
-        const data25 = await ObjArtService.getAll25Po();
-        setArt25(data25);
-  
-        const data250 = await ObjArtService.getAll250Po();
-        setArt250(data250);
-  
-        const data750 = await ObjArtService.getAll750Po();
-        setArt750(data750);
-  
-        const data2500 = await ObjArtService.getAll2500Po();
-        setArt2500(data2500);
-  
-        const data7500 = await ObjArtService.getAll7500Po();
-        setArt7500(data7500);
-  
-      }
-  
-      loadGems();
-    }, []);
+  const [art250, setArt250] = useState<artObj[]>([]);
+  const [art750, setArt750] = useState<artObj[]>([]);
+  const [art2500, setArt2500] = useState<artObj[]>([]);
+  const [art7500, setArt7500] = useState<artObj[]>([]);
+
+  useEffect(() => {
+    async function loadArts() {
+      const data25 = await ObjArtService.getAll25Po();
+      setArt25(data25);
+
+      const data250 = await ObjArtService.getAll250Po();
+      setArt250(data250);
+
+      const data750 = await ObjArtService.getAll750Po();
+      setArt750(data750);
+
+      const data2500 = await ObjArtService.getAll2500Po();
+      setArt2500(data2500);
+
+      const data7500 = await ObjArtService.getAll7500Po();
+      setArt7500(data7500);
+
+    }
+
+    loadArts();
+  }, []);
   return (
     <>
       <Flex

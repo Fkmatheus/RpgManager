@@ -20,11 +20,11 @@ interface DefaultTableProps {
   fontSize?: number;
 }
 
-export function DefaultTable({tableName, dice, type, data, fontSize }: DefaultTableProps) {
+export function DefaultTable({ tableName, dice, type, data, fontSize }: DefaultTableProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [itemName, setItemName] = useState("");
-  const [itemId, setItemId] = useState<number|undefined>(undefined);
-
+  const [itemId, setItemId] = useState<number | undefined>(undefined);
+  
   function handleOpenModal(item: string, id: number) {
     setItemName(item);
     setItemId(id);
@@ -36,15 +36,29 @@ export function DefaultTable({tableName, dice, type, data, fontSize }: DefaultTa
         <Table size="sm" variant="unstyled" color={"white"} backgroundColor={"#161616"}>
           <Thead>
             <Tr>
-              <Th width={"20px"} textAlign={"center"} borderRight={"solid black 1px"}>{dice}</Th>
-              <Th>{type}</Th>
+              {!tableName.includes("mágico") && (
+                <>
+                  <Th
+                    width="20px"
+                    textAlign="center"
+                    borderRight="solid black 1px"
+                    color={"tomato"}
+                  >
+                    {dice}
+                  </Th>
+                  <Th color={"tomato"}>{type}</Th>
+                </>
+              )}
             </Tr>
           </Thead>
 
           <Tbody>
             {data.map((item) => (
               <Tr key={item.id} onClick={() => handleOpenModal(item.title, item.id)} cursor={"pointer"} _hover={{ backgroundColor: "#272727", fontWeight: "bold", color: "tomato" }}>
-                <Td fontSize={fontSize ? fontSize : 13} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.dice}</Td>
+
+                {!tableName.includes("mágico") && (
+                  <Td fontSize={fontSize ? fontSize : 13} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.dice}</Td>
+                )}
                 <Td fontSize={fontSize ? fontSize : 13} whiteSpace="normal" maxW="200px">{item.title}</Td>
               </Tr>
             ))}
@@ -52,7 +66,7 @@ export function DefaultTable({tableName, dice, type, data, fontSize }: DefaultTa
         </Table>
       </TableContainer>
 
-      <DefaultModal tableName={tableName} id={itemId} isOpen={isOpen} itemName={itemName} onClose={onClose}/>
+      <DefaultModal tableName={tableName} id={itemId} isOpen={isOpen} itemName={itemName} onClose={onClose} />
     </>
   );
 }

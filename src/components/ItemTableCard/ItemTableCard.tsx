@@ -23,21 +23,25 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
         case 'D4':
             intDice = 4
             break
-        
+
         case 'D6':
             intDice = 6
             break
-        
+
         case 'D8':
             intDice = 8
             break
-        
+
         case 'D10':
             intDice = 10
             break
-        
+
         case 'D12':
             intDice = 12
+            break
+
+        case 'D100':
+            intDice = 100
             break
     }
 
@@ -49,7 +53,12 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
             },
             '-ms-overflow-style': 'none',
             'scrollbar-width': 'none',
-        }} width={width ? width : "48%" } height={height ? height : "62vh"} border={"solid 1px black"}>
+
+        }} width={width ? width : "48%"} height={height ? height : "62vh"} border={"solid 1px black"} _hover={{
+            transform: "translateY(-4px) scale(1.01)",
+            boxShadow: "0 0 20px rgba(255,99,71,0.25)",
+            borderColor: "tomato",
+        }}>
             <Box display={"flex"} flexDirection={"row"} fontSize={20} alignItems={"center"} textAlign={"center"} fontWeight={"bold"} color={"white"} width={"100%"} height={"6vh"} backgroundColor={"#111111"} justifyContent={"space-between"}>
                 <Text marginLeft={3}>{tableName}</Text>
                 <Button onClick={() => {
@@ -60,14 +69,14 @@ export function ItemTableCard({ tableName, data, dice, type, height, width }: It
                         setLoading(false);
 
                         setTimeout(() => {
-                            
+
                         }, 4000);
                     }, 1000);
                 }} marginRight={3} p={0} minW="auto" h="auto" _hover={{ color: "tomato" }} backgroundColor={"#111111"} color={"white"} variant={"ghost"}><FaDiceD20 size={25} /></Button>
             </Box>
             <DefaultTable tableName={tableName} dice={dice ? dice : 'd10'} type={type} data={data} />
 
-            <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading}/>
+            <ItemRollModal intDice={intDice} isOpen={isOpen} onClose={onClose} tableName={tableName} loading={loading} />
         </Box>
     )
 }

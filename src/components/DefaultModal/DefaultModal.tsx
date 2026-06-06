@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import { GemsService } from "../../services/gemsService";
 import type { artObj } from "../../types/ArtObj";
 import { ObjArtService } from "../../services/artObjService";
+import { MagicItensService } from "../../services/magicItensService";
 
 interface DefaultModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
   const imagePath = `/img/${tableName}/${result?.id}.png`;
 
   useEffect(() => {
-    async function searchGem() {
+    async function searchEtc() {
 
       switch (tableName) {
         case "Gemas [10po]":
@@ -86,12 +87,57 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
           const dataArt7500 = await ObjArtService.search7500(id);
           setResult(dataArt7500);
           break
+
+        case "Tabela de item mágico A":
+          const dataMagicA = await MagicItensService.searchA(id);
+          setResult(dataMagicA);
+          break
+
+        case "Tabela de item mágico B":
+          const dataMagicB = await MagicItensService.searchB(id);
+          setResult(dataMagicB);
+          break
+
+        case "Tabela de item mágico C":
+          const dataMagicC = await MagicItensService.searchC(id);
+          setResult(dataMagicC);
+          break
+
+        case "Tabela de item mágico D":
+          const dataMagicD = await MagicItensService.searchD(id);
+          setResult(dataMagicD);
+          break
+
+        case "Tabela de item mágico E":
+          const dataMagicE = await MagicItensService.searchE(id);
+          setResult(dataMagicE);
+          break
+
+        case "Tabela de item mágico F":
+          const dataMagicF = await MagicItensService.searchF(id);
+          setResult(dataMagicF);
+          break
+
+        case "Tabela de item mágico G":
+          const dataMagicG = await MagicItensService.searchG(id);
+          setResult(dataMagicG);
+          break
+
+        case "Tabela de item mágico H":
+          const dataMagicH = await MagicItensService.searchH(id);
+          setResult(dataMagicH);
+          break
+
+        case "Tabela de item mágico I":
+          const dataMagicI = await MagicItensService.searchI(id);
+          setResult(dataMagicI);
+          break
       }
 
     }
 
     if (isOpen) {
-      searchGem();
+      searchEtc();
     }
   }, [isOpen]);
 
@@ -126,6 +172,7 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
               width={"100%"}
               height={"100%"}
               overflowY="auto"
+              maxH="140px"
               sx={{
                 "&::-webkit-scrollbar": {
                   display: "none",
@@ -135,7 +182,7 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
               }}
               marginTop={5}
             >
-              <Text>
+              <Text letterSpacing="1px">
                 {result?.description}
               </Text>
             </Box>

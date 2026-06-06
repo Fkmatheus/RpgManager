@@ -4,6 +4,7 @@ import type { Gem } from "../../types/Gem";
 import { GemsService } from "../../services/gemsService";
 import { ObjArtService } from "../../services/artObjService";
 import { FaDiceD20 } from 'react-icons/fa';
+import { MagicItensService } from '../../services/magicItensService';
 
 interface ItemRollModal {
   isOpen: boolean;
@@ -78,6 +79,51 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
           const dataArt7500 = await ObjArtService.roll7500(roll);
           setResult(dataArt7500);
           break
+
+        case "Tabela de item mágico A":
+          const dataMagicA = await MagicItensService.rollA(roll);
+          setResult(dataMagicA);
+          break
+
+        case "Tabela de item mágico B":
+          const dataMagicB = await MagicItensService.rollB(roll);
+          setResult(dataMagicB);
+          break
+
+        case "Tabela de item mágico C":
+          const dataMagicC = await MagicItensService.rollC(roll);
+          setResult(dataMagicC);
+          break
+
+        case "Tabela de item mágico D":
+          const dataMagicD = await MagicItensService.rollD(roll);
+          setResult(dataMagicD);
+          break
+
+        case "Tabela de item mágico E":
+          const dataMagicE = await MagicItensService.rollE(roll);
+          setResult(dataMagicE);
+          break
+
+        case "Tabela de item mágico F":
+          const dataMagicF = await MagicItensService.rollF(roll);
+          setResult(dataMagicF);
+          break
+
+        case "Tabela de item mágico G":
+          const dataMagicG = await MagicItensService.rollG(roll);
+          setResult(dataMagicG);
+          break
+
+        case "Tabela de item mágico H":
+          const dataMagicH = await MagicItensService.rollH(roll);
+          setResult(dataMagicH);
+          break
+
+        case "Tabela de item mágico I":
+          const dataMagicI = await MagicItensService.rollI(roll);
+          setResult(dataMagicI);
+          break
       }
 
     }
@@ -134,7 +180,18 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
                     </Text>
                   </Box>
                   <Box>
-                    <Box>
+                    <Box
+                      maxH="140px"
+                      overflowY="auto"
+                      css={{
+                        "&::-webkit-scrollbar": {
+                          display: "none",
+                        },
+                        "-ms-overflow-style": "none",
+                        scrollbarWidth: "none",
+                      }}
+                      letterSpacing="1px"
+                    >
                       <Text>{result?.description}</Text>
                     </Box>
 
