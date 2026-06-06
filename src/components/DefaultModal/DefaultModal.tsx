@@ -22,21 +22,51 @@ interface DefaultModalProps {
   id: number | undefined;
 }
 
-export function DefaultModal({id, isOpen, onClose, itemName, tableName }: DefaultModalProps) {
+export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: DefaultModalProps) {
   const [result, setResult] = useState<Gem | null>(null);
   const imagePath = `/img/${tableName}/${result?.id}.png`;
 
   useEffect(() => {
-      async function searchGem() {
-        const data = await GemsService.search10(id);
-        setResult(data);
-      
+    async function searchGem() {
+
+      switch (tableName) {
+        case "Gemas [10po]":
+          const data = await GemsService.search10(id);
+          setResult(data);
+          break
+        
+        case "Gemas [50po]":
+          const data50 = await GemsService.search50(id);
+          setResult(data50);
+          break
+        
+        case "Gemas [100po]":
+          const data100 = await GemsService.search100(id);
+          setResult(data100);
+          break
+        
+        case "Gemas [500po]":
+          const data500 = await GemsService.search500(id);
+          setResult(data500);
+          break
+        
+        case "Gemas [1000po]":
+          const data1000 = await GemsService.search1000(id);
+          setResult(data1000);
+          break
+
+        case "Gemas [5000po]":
+          const data5000 = await GemsService.search5000(id);
+          setResult(data5000);
+          break
       }
-  
-      if (isOpen) {
-        searchGem();
-      }
-    }, [isOpen]);
+
+    }
+
+    if (isOpen) {
+      searchGem();
+    }
+  }, [isOpen]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl" isCentered>
@@ -60,7 +90,7 @@ export function DefaultModal({id, isOpen, onClose, itemName, tableName }: Defaul
             width={"100%"}
             display={"flex"}
             flexDirection={"column"}
-            // justifyContent={"space-between"}
+          // justifyContent={"space-between"}
           >
             <Box>
               <img width={"550px"} src={imagePath} alt={result?.title} />
