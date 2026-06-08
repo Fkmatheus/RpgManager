@@ -2,12 +2,10 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import logoArtTesouro from "../../img/art.png";
 import logoArtMagicos from "../../img/art2.png";
 import logoArtGemas from "../../img/art3.png";
-import logoArtMagias from "../../img/art4.png";
-import logoArtLivros from "../../img/art5.png";
 import logoPilhaTesouro from "../../img/art6.png"
-import logoDiarioCampanha from "../../img/art7.png"
 import { Footer } from '../Footer/Footer';
 import { Link as RouterLink } from "react-router-dom";
+import { FONT_SIZE_MEDIUM_TEXT, FONT_SIZE_SUBTITLE, FONT_SIZE_TABLE, FONT_SIZE_TEXT, FONT_SIZE_TITLE } from "../../helpers/globalFont";
 
 export function HomeSection() {
   return (
@@ -19,7 +17,7 @@ export function HomeSection() {
         flexDirection={"column"}
         marginLeft={"3%"}
       >
-        <Flex width={"95%"} justifyContent={"center"} flexDirection={"column"}>
+        <Flex width={"98%"} justifyContent={"center"} flexDirection={"column"}>
           <Box
             display={"flex"}
             flexDirection={"row"}
@@ -37,6 +35,7 @@ export function HomeSection() {
               marginTop={3}
               marginLeft={"7%"}
               border={"solid 1px black"}
+              borderRadius={"20px"}
               width={"60%"}
               height={"92vh"}
               bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoArtTesouro})`}
@@ -54,7 +53,7 @@ export function HomeSection() {
                 marginTop={"45%"}
                 marginLeft={5}
                 fontFamily={"Cinzel"}
-                fontSize={35}
+                fontSize={FONT_SIZE_TITLE}
                 color={"white"}
               >
                 Objetos de arte
@@ -64,7 +63,7 @@ export function HomeSection() {
                 textAlign={"left"}
                 marginLeft={5}
                 fontFamily={"Cinzel"}
-                fontSize={20}
+                fontSize={FONT_SIZE_MEDIUM_TEXT}
                 color={"gray.200"}
               >
                 Role seus diferentes tipos possiveis de objetos de arte
@@ -90,6 +89,7 @@ export function HomeSection() {
                   cursor: "pointer",
                 }}
                 border={"solid 1px black"}
+                borderRadius={"20px"}
                 height={"45vh"}
                 width={"100%"}
                 bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoArtMagicos})`}
@@ -107,7 +107,7 @@ export function HomeSection() {
                   marginTop={"30%"}
                   marginLeft={5}
                   fontFamily={"Cinzel"}
-                  fontSize={30}
+                  fontSize={FONT_SIZE_SUBTITLE}
                   color={"white"}
                 >
                   Itens mágicos
@@ -117,7 +117,7 @@ export function HomeSection() {
                   textAlign={"left"}
                   marginLeft={5}
                   fontFamily={"Cinzel"}
-                  fontSize={15}
+                  fontSize={FONT_SIZE_TEXT}
                   color={"gray.200"}
                 >
                   Role seus diferentes tipos possiveis de itens mágicos, dê
@@ -134,6 +134,7 @@ export function HomeSection() {
                   cursor: "pointer",
                 }}
                 border={"solid 1px black"}
+                borderRadius={"20px"}
                 height={"45vh"}
                 width={"100%"}
                 bgImage={`linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${logoArtGemas})`}
@@ -151,7 +152,7 @@ export function HomeSection() {
                   marginTop={"30%"}
                   marginLeft={5}
                   fontFamily={"Cinzel"}
-                  fontSize={30}
+                  fontSize={FONT_SIZE_SUBTITLE}
                   color={"white"}
                 >
                   Gemas
@@ -161,8 +162,9 @@ export function HomeSection() {
                   textAlign={"left"}
                   marginLeft={5}
                   fontFamily={"Cinzel"}
-                  fontSize={15}
+                  fontSize={FONT_SIZE_TEXT}
                   color={"gray.200"}
+
                 >
                   Role seus diferentes tipos possiveis de Gemas, consiga muito
                   ouro vendendo ou simplesmente utilize elas e fique radiante!.
@@ -171,45 +173,171 @@ export function HomeSection() {
             </Box>
           </Box>
         </Flex>
-        
-        <Box
-          marginTop={"3%"}
-          marginLeft={"6.6%"}
-          display={"flex"}
-          flexDirection={"row"}
-          width={"88.5%"}
-          height={"80vh"}
-        >
-          <Box _hover={{
-            transform: "scale(1.03)",
-            opacity: "0.7",
-            cursor: "pointer",
-          }} border={"solid 1px black"} height={"100%"} width={"100%"} bgImage={`linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(${logoPilhaTesouro})`}
-            bgSize={"cover"}
-            bgPosition={"center"}
-            bgRepeat={"no-repeat"}>
 
-            <Text
-              fontWeight={"bold"}
-              marginTop={"25%"}
-              marginLeft={5}
-              fontFamily={"Cinzel"}
-              fontSize={40}
-              color={"white"}
-            >
-              Pilha de Tesouro
-            </Text>
-            <Text
-              marginTop={"2.5%"}
-              textAlign={"left"}
-              marginLeft={5}
-              fontFamily={"Cinzel"}
-              fontSize={25}
-              color={"gray.200"}
-            >Explore uma pilha lendária de gemas, artefatos mágicos e riquezas esquecidas — o verdadeiro coração da aventura.</Text>
+        {/* <Box display={"flex"} flexDirection={"row"} width={"88.5%"} height={"60vh"} marginTop={"5%"} marginLeft={"6.5%"} fontFamily={"Cinzel"}>
+          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
+            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
+            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
+            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
+            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+              "li::marker": {
+                color: "tomato",
+              },
+            }}>
+              <li>Tesouro de covil</li>
+              <li>4 faixas de nível</li>
+              <li>Objetos, gemas e itens nomeados</li>
+            </Box>
+            <Text color={"gold"} fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
           </Box>
-          
+
+          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
+            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
+            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
+            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
+            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+              "li::marker": {
+                color: "tomato",
+              },
+            }}>
+              <li>Tesouro de covil</li>
+              <li>4 faixas de nível</li>
+              <li>Objetos, gemas e itens nomeados</li>
+            </Box>
+            <Text fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
+          </Box>
+
+          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
+            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
+            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
+            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
+            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+              "li::marker": {
+                color: "tomato",
+              },
+            }}>
+              <li>Tesouro de covil</li>
+              <li>4 faixas de nível</li>
+              <li>Objetos, gemas e itens nomeados</li>
+            </Box>
+            <Text fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
+          </Box>
+        </Box> */}
+
+
+        <Box
+          position="relative"
+          display="flex"
+          flexDirection="row"
+          width="98%"
+          height="85vh"
+          marginTop="5%"
+          marginLeft={"2%"}
+          fontFamily="Cinzel"
+          overflow="hidden"
+        >
+          {/* Vídeo de fundo */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: 0,
+            }}
+          >
+            <source src="/videos/background3.mp4" type="video/mp4" />
+          </video>
+
+          {/* Overlay escuro opcional */}
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"
+            height="100%"
+            bg="black"
+            opacity={0.3}
+            zIndex={1}
+          />
+
+          {/* Conteúdo */}
+          <Box
+            position="relative"
+            zIndex={2}
+            display="flex"
+            flexDirection="row"
+            width="100%"
+            marginTop={"5%"}
+          >
+            <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"} _hover={{
+              transform: "translateY(-4px) scale(1.01)",
+              boxShadow: "0 0 20px rgba(255,99,71,0.25)",
+              borderColor: "tomato",
+            }}>
+              <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
+              <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)" fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
+              <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
+              <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+                "li::marker": {
+                  color: "tomato",
+                },
+              }}>
+                <li>Tesouro de covil</li>
+                <li>4 faixas de nível</li>
+                <li>Objetos, gemas e itens nomeados</li>
+              </Box>
+              <Text _hover={{ fontWeight: "bold", color: "gold", textShadow: "0 0 12px rgba(192, 250, 32, 0.7)", cursor: "pointer" }} color={"gold"} fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
+            </Box>
+
+            <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"} _hover={{
+              transform: "translateY(-4px) scale(1.01)",
+              boxShadow: "0 0 20px rgba(255,99,71,0.25)",
+              borderColor: "tomato",
+            }}>
+              <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>📖</Text>
+              <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)" fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Lista de Magias</Text>
+              <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Liste as mágias do sistema, com filtros personalizados e separação por classes.</Text>
+              <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+                "li::marker": {
+                  color: "tomato",
+                },
+              }}>
+                <li>Filtros personalizados</li>
+                <li>Separação por escolas e classes</li>
+                <li>Criação e edição</li>
+              </Box>
+              <Text fontSize={FONT_SIZE_TEXT}>Em desenvolvimento <span></span></Text>
+            </Box>
+
+            <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"} _hover={{
+              transform: "translateY(-4px) scale(1.01)",
+              boxShadow: "0 0 20px rgba(255,99,71,0.25)",
+              borderColor: "tomato",
+            }}>
+              <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>⚔️</Text>
+              <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)"  fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Lista de itens</Text>
+              <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Liste todos os itens mágicos do sistema, com filtros e tags personalizados.</Text>
+              <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
+                "li::marker": {
+                  color: "tomato",
+                },
+              }}>
+                <li>Filtros diversos</li>
+                <li>Categorias diversas</li>
+                <li>Itens com imagens representativas</li>
+              </Box>
+              <Text fontSize={FONT_SIZE_TEXT}>Em desenvolvimento <span></span></Text>
+            </Box>
+          </Box>
         </Box>
+
         <Footer />
       </Flex>
     </>

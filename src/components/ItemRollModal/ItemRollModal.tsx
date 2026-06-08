@@ -23,7 +23,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
     async function loadRoll() {
       const roll = Math.floor(Math.random() * intDice) + 1;
       setDiceRoll(roll);
-      console.log(tableName);
+      
 
       switch (tableName) {
         case "Gemas [10po]":
@@ -170,7 +170,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
                     display: "none",
                   },
                 }}>
-                  <Box color={"gray.200"} fontSize={18} fontStyle={'bold'}>
+                  <Box color={"gray.200"} fontSize={18}>
                     <Text
                       fontSize="24px"
                       fontWeight="bold"

@@ -11,6 +11,7 @@ import {
 import { useState } from "react"
 import { DefaultModal } from "../DefaultModal/DefaultModal";
 import type { TableItemDefault } from "../../types/TableItemDefault"
+import { FONT_SIZE_TABLE } from "../../helpers/globalFont";
 
 interface DefaultTableProps {
   dice: string;
@@ -43,10 +44,11 @@ export function DefaultTable({ tableName, dice, type, data, fontSize }: DefaultT
                     textAlign="center"
                     borderRight="solid black 1px"
                     color={"tomato"}
+                    fontSize={FONT_SIZE_TABLE}
                   >
                     {dice}
                   </Th>
-                  <Th color={"tomato"}>{type}</Th>
+                  <Th color={"tomato"} fontSize={FONT_SIZE_TABLE}>{type}</Th>
                 </>
               )}
             </Tr>
@@ -57,9 +59,9 @@ export function DefaultTable({ tableName, dice, type, data, fontSize }: DefaultT
               <Tr key={item.id} onClick={() => handleOpenModal(item.title, item.id)} cursor={"pointer"} _hover={{ backgroundColor: "#272727", fontWeight: "bold", color: "tomato" }}>
 
                 {!tableName.includes("mágico") && (
-                  <Td fontSize={fontSize ? fontSize : 13} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.dice}</Td>
+                  <Td fontSize={fontSize ? fontSize : FONT_SIZE_TABLE} fontWeight={"bold"} textAlign={"center"} borderRight={"solid black 1px"}>{item.dice}</Td>
                 )}
-                <Td fontSize={fontSize ? fontSize : 13} whiteSpace="normal" maxW="200px">{item.title}</Td>
+                <Td fontSize={fontSize ? fontSize : FONT_SIZE_TABLE} whiteSpace="normal" maxW="200px">{item.title}</Td>
               </Tr>
             ))}
           </Tbody>
