@@ -20,17 +20,9 @@ export function Header() {
 							<Link title="Home" _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
 						</Box>
 						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
-							<Link title="Tesouros" as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><GiOpenTreasureChest style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
+							<Link title="Tesouros" as={RouterLink}  _hover={{ textDecoration: "none" }} to="/treasure"><GiOpenTreasureChest style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
 						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
-							<Link title="Magias" as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaMagic style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
-						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
-							<Link title="Livros" as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><FaBook style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
-						</Box>
-						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
-							<Link title="Diario de Campanha" as={RouterLink} _hover={{ textDecoration: "none" }} to="/"><GiTreasureMap style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
-						</Box>
+						
 					</Box>
 					<Box marginTop={"200%"}>
 						<Image src={icon}></Image>

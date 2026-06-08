@@ -4,6 +4,7 @@ import logoArtMagicos from "../../img/art2.png";
 import logoArtGemas from "../../img/art3.png";
 import logoPilhaTesouro from "../../img/art6.png"
 import { Footer } from '../Footer/Footer';
+import { Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { FONT_SIZE_MEDIUM_TEXT, FONT_SIZE_SUBTITLE, FONT_SIZE_TABLE, FONT_SIZE_TEXT, FONT_SIZE_TITLE } from "../../helpers/globalFont";
 
@@ -293,7 +294,8 @@ export function HomeSection() {
                 <li>4 faixas de nível</li>
                 <li>Objetos, gemas e itens nomeados</li>
               </Box>
-              <Text _hover={{ fontWeight: "bold", color: "gold", textShadow: "0 0 12px rgba(192, 250, 32, 0.7)", cursor: "pointer" }} color={"gold"} fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
+              <Link as={RouterLink}
+                to="/treasure" _hover={{ fontWeight: "bold", color: "gold", textShadow: "0 0 12px rgba(192, 250, 32, 0.7)", cursor: "pointer" }} color={"gold"} fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Link>
             </Box>
 
             <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"} _hover={{
@@ -322,7 +324,7 @@ export function HomeSection() {
               borderColor: "tomato",
             }}>
               <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>⚔️</Text>
-              <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)"  fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Lista de itens</Text>
+              <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)" fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Lista de itens</Text>
               <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Liste todos os itens mágicos do sistema, com filtros e tags personalizados.</Text>
               <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
                 "li::marker": {
