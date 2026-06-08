@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import icon from "../../img/icon.png";
-import { FaBook, FaHome, FaMagic } from "react-icons/fa";
+import { FaBook, FaGem, FaHome, FaMagic, FaPalette } from "react-icons/fa";
 import { GiOpenTreasureChest, GiTreasureMap } from "react-icons/gi";
 
 
@@ -20,9 +20,69 @@ export function Header() {
 							<Link title="Home" _hover={{ textDecoration: "none" }} as={RouterLink} to="/"><FaHome style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
 						</Box>
 						<Box color={"gray"} height={"12vh"} width={"100%"} textAlign={"center"} display={"flex"} justifyContent={"center"} alignItems={"center"} _hover={{ textColor: "tomato", fontWeight: "bold" }}>
-							<Link title="Tesouros" as={RouterLink}  _hover={{ textDecoration: "none" }} to="/treasure"><GiOpenTreasureChest style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
+							<Link title="Tesouros" as={RouterLink} _hover={{ textDecoration: "none" }} to="/treasure"><GiOpenTreasureChest style={{ fontSize: "clamp(38px, 2vw, 50px)" }} /></Link>
 						</Box>
-						
+
+						<Box
+							color={"gray"}
+							height={"12vh"}
+							width={"100%"}
+							textAlign={"center"}
+							display={"flex"}
+							justifyContent={"center"}
+							alignItems={"center"}
+							_hover={{ textColor: "tomato", fontWeight: "bold" }}
+						>
+							<Link
+								title="Gemas"
+								as={RouterLink}
+								to="/Gemas"
+								_hover={{ textDecoration: "none" }}
+							>
+								<FaGem style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
+							</Link>
+						</Box>
+
+						<Box
+							color={"gray"}
+							height={"12vh"}
+							width={"100%"}
+							textAlign={"center"}
+							display={"flex"}
+							justifyContent={"center"}
+							alignItems={"center"}
+							_hover={{ textColor: "tomato", fontWeight: "bold" }}
+						>
+							<Link
+								title="Itens Mágicos"
+								as={RouterLink}
+								to="/ItensMagicos"
+								_hover={{ textDecoration: "none" }}
+							>
+								<FaMagic style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
+							</Link>
+						</Box>
+
+						<Box
+							color={"gray"}
+							height={"12vh"}
+							width={"100%"}
+							textAlign={"center"}
+							display={"flex"}
+							justifyContent={"center"}
+							alignItems={"center"}
+							_hover={{ textColor: "tomato", fontWeight: "bold" }}
+						>
+							<Link
+								title="Objetos de Arte"
+								as={RouterLink}
+								to="/ObjetosDeArte"
+								_hover={{ textDecoration: "none" }}
+							>
+								<FaPalette style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
+							</Link>
+						</Box>
+
 					</Box>
 					<Box marginTop={"200%"}>
 						<Image src={icon}></Image>
