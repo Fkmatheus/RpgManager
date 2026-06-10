@@ -121,7 +121,7 @@ export function TreasureSection() {
                 <FaGem color="gray" size={20} />
                 <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)" color={"white"} fontSize={FONT_SIZE_MEDIUM_TEXT}>Objetos de valor</Text>
               </Box>
-              {treasure && <TreasureTable price={treasure.gemsPrice > 0 ? treasure.gemsPrice : treasure.artsPrice} type="objgem" data={treasure.gems.length > 0 ? treasure.gems : treasure.arts} />}
+              {treasure && <TreasureTable price={treasure.gemsPrice > 0 ? treasure.gemsPrice : treasure.artsPrice} type={treasure.gems.length > 0 ? "gem" : "art"} data={treasure.gems.length > 0 ? treasure.gems : treasure.arts} />}
             </Box>
             <Box overflowY="auto" css={{
               '&::-webkit-scrollbar': {
@@ -138,7 +138,7 @@ export function TreasureSection() {
                 <FaMagic color="gray" size={20} />
                 <Text fontWeight="bold" textShadow="0 0 12px rgba(255,99,71,0.7)" color={"white"} fontSize={FONT_SIZE_MEDIUM_TEXT}>Itens mágicos</Text>
               </Box>
-              {treasure && <TreasureTable data={treasure.itens} />}
+              {treasure && <TreasureTable data={treasure.itens} type="item" />}
 
             </Box>
           </Box>

@@ -168,63 +168,12 @@ export function HomeSection() {
 
                 >
                   Role seus diferentes tipos possiveis de Gemas, consiga muito
-                  ouro vendendo ou simplesmente utilize elas e fique radiante!.
+                  ouro vendendo ou simplesmente utilize elas e fique radiante!
                 </Text>
               </Box>
             </Box>
           </Box>
         </Flex>
-
-        {/* <Box display={"flex"} flexDirection={"row"} width={"88.5%"} height={"60vh"} marginTop={"5%"} marginLeft={"6.5%"} fontFamily={"Cinzel"}>
-          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
-            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
-            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
-            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
-            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
-              "li::marker": {
-                color: "tomato",
-              },
-            }}>
-              <li>Tesouro de covil</li>
-              <li>4 faixas de nível</li>
-              <li>Objetos, gemas e itens nomeados</li>
-            </Box>
-            <Text color={"gold"} fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
-          </Box>
-
-          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
-            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
-            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
-            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
-            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
-              "li::marker": {
-                color: "tomato",
-              },
-            }}>
-              <li>Tesouro de covil</li>
-              <li>4 faixas de nível</li>
-              <li>Objetos, gemas e itens nomeados</li>
-            </Box>
-            <Text fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
-          </Box>
-
-          <Box backgroundColor={"#111111"} width={"35%"} height={"60vh"} margin={5} color={"white"} border={"solid 1px #202020"} borderRadius={"20px"} padding={"25px"} borderTop={"solid 2px tomato"}>
-            <Text marginBottom={3} fontSize={FONT_SIZE_TITLE}>💰</Text>
-            <Text fontSize={FONT_SIZE_MEDIUM_TEXT} marginBottom={3}>Gerador de Tesouro</Text>
-            <Text fontSize={FONT_SIZE_TEXT} marginBottom={5}>Gere recompensas na hora: moedas, gemas, objetos de arte e itens mágicos, escalados pela faixa de nível do grupo.</Text>
-            <Box marginLeft={5} marginBottom={5} fontSize={FONT_SIZE_TEXT} sx={{
-              "li::marker": {
-                color: "tomato",
-              },
-            }}>
-              <li>Tesouro de covil</li>
-              <li>4 faixas de nível</li>
-              <li>Objetos, gemas e itens nomeados</li>
-            </Box>
-            <Text fontSize={FONT_SIZE_TEXT}>Gerar tesouro <span>→</span></Text>
-          </Box>
-        </Box> */}
-
 
         <Box
           position="relative"
