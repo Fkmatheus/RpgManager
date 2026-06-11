@@ -22,28 +22,35 @@ export function TreasureSection() {
   const toast = useToast();
   const [level, setLevel] = useState("");
   const [treasure, setTreasure] = useState<TreasureResponse | null>(null);
-  
+  const [hasRolled, setHasRolled] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   async function handleRollTreasure() {
     if (!level) return;
 
     try {
 
+      setLoading(true);
       const dice = Math.floor(Math.random() * 100) + 1;
-      
+
       const result = await TreasureService.getLoot(
         level,
         dice
       );
 
-      setTreasure(result);
-      
-      toast({
-        title: `Você tirou ${dice} no dado`,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom-right",
-      });
+      setTimeout(() => {
+        setTreasure(result);
+        setHasRolled(true);
+        setLoading(false);
+
+        toast({
+          title: `Você tirou ${dice} no dado`,
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom-right",
+        });
+      }, 2500);
     } catch (error) {
       console.error(error);
     }
@@ -75,7 +82,7 @@ export function TreasureSection() {
 
         </Box>
 
-        <Box width={"96%"} marginLeft={"2%"} backgroundColor={"#131313"} height={"85%"} borderRadius={"20px"} border={"solid 1px #202020"} borderTop={"solid 2px tomato"}>
+        {hasRolled ? <Box width={"96%"} marginLeft={"2%"} backgroundColor={"#131313"} height={"85%"} borderRadius={"20px"} border={"solid 1px #202020"} borderTop={"solid 2px tomato"}>
 
           <Box padding={"10px"} display={"flex"} flexDirection={"row"} marginTop={3} marginLeft={"2%"} width={"96%"} height={"15vh"} justifyContent={"space-between"}>
             <Box>
@@ -144,7 +151,73 @@ export function TreasureSection() {
           </Box>
 
 
-        </Box>
+        </Box> : loading ? <Flex
+          width="96%"
+          height="85%"
+          marginLeft="2%"
+          borderRadius="20px"
+          background="#131313"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          gap={5}
+        >
+          <FaDiceD20
+            size={80}
+            color="tomato"
+            style={{
+              animation: "spin 1s linear infinite",
+            }}
+          />
+
+          <Text
+            color="white"
+            fontSize={FONT_SIZE_SUBTITLE}
+          >
+            Gerando tesouro...
+          </Text>
+        </Flex> : <Box
+          width="96%"
+          height="85%"
+          marginLeft="2%"
+          borderRadius="20px"
+          overflow="hidden"
+          position="relative"
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          >
+            <source src="/videos/background4.mp4" type="video/mp4" />
+          </video>
+
+          <Box
+            position="absolute"
+            top="0"
+            left="0"
+            width="100%"
+            height="100%"
+            background="rgba(0,0,0,0.5)"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Text
+              color="white"
+              fontSize={FONT_SIZE_SUBTITLE}
+              fontWeight="bold"
+            >
+              Selecione um nível e role o tesouro
+            </Text>
+          </Box>
+        </Box>}
 
 
 
