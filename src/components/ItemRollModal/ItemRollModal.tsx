@@ -17,7 +17,7 @@ interface ItemRollModal {
 export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: ItemRollModal) {
   const [result, setResult] = useState<Gem | null>(null);
   const [diceRoll, setDiceRoll] = useState<number>(1);
-  const imagePath = `/img/${tableName}/${result?.id}.png`;
+  const imagePath = `/img/${tableName.split(" ")[0] == "Gemas" ? "Gemas" : tableName.split(" ")[0] == "Objetos" ? "ObjetosDeArte" : "ItensMagicos"}/${result?.title}.png`;
 
   useEffect(() => {
     async function loadRoll() {

@@ -18,6 +18,11 @@ export const MagicItensService = {
     return response.data;
   },
 
+  async searchAByName(name: string) {
+    const response = await api.get(`/searchByName/magicA/${name}`);
+    return response.data;
+  },
+
   async getAllMagicItensB(): Promise<magicItens[]> {
     const response = await api.get<magicItens[]>("/unique/magicB");
 
@@ -31,6 +36,11 @@ export const MagicItensService = {
 
   async searchB(id: number | undefined) {
     const response = await api.get(`/magicB/${id}`);
+    return response.data;
+  },
+
+  async searchBByName(name: string) {
+    const response = await api.get(`/searchByName/magicB/${name}`);
     return response.data;
   },
 
@@ -50,6 +60,11 @@ export const MagicItensService = {
     return response.data;
   },
 
+  async searchCByName(name: string) {
+    const response = await api.get(`/searchByName/magicC/${name}`);
+    return response.data;
+  },
+
   async getAllMagicItensD(): Promise<magicItens[]> {
     const response = await api.get<magicItens[]>("/unique/magicD");
 
@@ -63,6 +78,11 @@ export const MagicItensService = {
 
   async searchD(id: number | undefined) {
     const response = await api.get(`/magicD/${id}`);
+    return response.data;
+  },
+
+  async searchDByName(name: string) {
+    const response = await api.get(`/searchByName/magicD/${name}`);
     return response.data;
   },
 
@@ -82,6 +102,11 @@ export const MagicItensService = {
     return response.data;
   },
 
+  async searchEByName(name: string) {
+    const response = await api.get(`/searchByName/magicE/${name}`);
+    return response.data;
+  },
+
   async getAllMagicItensF(): Promise<magicItens[]> {
     const response = await api.get<magicItens[]>("/unique/magicF");
 
@@ -95,6 +120,11 @@ export const MagicItensService = {
 
   async searchF(id: number | undefined) {
     const response = await api.get(`/magicF/${id}`);
+    return response.data;
+  },
+
+  async searchFByName(name: string) {
+    const response = await api.get(`/searchByName/magicF/${name}`);
     return response.data;
   },
 
@@ -114,6 +144,11 @@ export const MagicItensService = {
     return response.data;
   },
 
+  async searchGByName(name: string) {
+    const response = await api.get(`/searchByName/magicG/${name}`);
+    return response.data;
+  },
+
   async getAllMagicItensH(): Promise<magicItens[]> {
     const response = await api.get<magicItens[]>("/unique/magicH");
 
@@ -130,6 +165,11 @@ export const MagicItensService = {
     return response.data;
   },
 
+  async searchHByName(name: string) {
+    const response = await api.get(`/searchByName/magicH/${name}`);
+    return response.data;
+  },
+
   async getAllMagicItensI(): Promise<magicItens[]> {
     const response = await api.get<magicItens[]>("/unique/magicI");
 
@@ -143,6 +183,11 @@ export const MagicItensService = {
 
   async searchI(id: number | undefined) {
     const response = await api.get(`/magicI/${id}`);
+    return response.data;
+  },
+
+  async searchIByName(name: string) {
+    const response = await api.get(`/searchByName/magicI/${name}`);
     return response.data;
   },
 

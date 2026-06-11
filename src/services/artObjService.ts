@@ -18,6 +18,11 @@ export const ObjArtService = {
     return response.data;
   },
 
+  async search25ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/art25/${name}`);
+    return response.data;
+  }, 
+
   async getAll250Po(): Promise<artObj[]> {
     const response = await api.get<artObj[]>("/art250");
 
@@ -33,6 +38,11 @@ export const ObjArtService = {
     const response = await api.get(`/art250/${id}`);
     return response.data;
   },
+
+  async search250ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/art250/${name}`);
+    return response.data;
+  }, 
 
   async getAll750Po(): Promise<artObj[]> {
     const response = await api.get<artObj[]>("/art750");
@@ -50,6 +60,11 @@ export const ObjArtService = {
     return response.data;
   },
 
+  async search750ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/art750/${name}`);
+    return response.data;
+  }, 
+
   async getAll2500Po(): Promise<artObj[]> {
     const response = await api.get<artObj[]>("/art2500");
 
@@ -66,6 +81,11 @@ export const ObjArtService = {
     return response.data;
   },
 
+  async search2500ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/art2500/${name}`);
+    return response.data;
+  }, 
+
   async getAll7500Po(): Promise<artObj[]> {
     const response = await api.get<artObj[]>("/art7500");
 
@@ -81,5 +101,10 @@ export const ObjArtService = {
     const response = await api.get(`/art7500/${id}`);
     return response.data;
   },
+
+  async search7500ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/art7500/${name}`);
+    return response.data;
+  }, 
 
 };

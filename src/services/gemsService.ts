@@ -18,6 +18,11 @@ export const GemsService = {
     return response.data;
   },
 
+  async search10ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems10/${name}`);
+    return response.data;
+  },
+
   async getAll50Po(): Promise<Gem[]> {
     const response = await api.get<Gem[]>("/gems50");
 
@@ -31,6 +36,11 @@ export const GemsService = {
 
   async search50(id: number | undefined) {
     const response = await api.get(`/gems50/${id}`);
+    return response.data;
+  },
+
+  async search50ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems50/${name}`);
     return response.data;
   },
 
@@ -50,6 +60,11 @@ export const GemsService = {
     return response.data;
   },
 
+  async search100ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems100/${name}`);
+    return response.data;
+  },
+
   async getAll500Po(): Promise<Gem[]> {
     const response = await api.get<Gem[]>("/gems500");
 
@@ -63,6 +78,11 @@ export const GemsService = {
 
   async search500(id: number | undefined) {
     const response = await api.get(`/gems500/${id}`);
+    return response.data;
+  },
+
+  async search500ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems500/${name}`);
     return response.data;
   },
 
@@ -82,6 +102,11 @@ export const GemsService = {
     return response.data;
   },
 
+  async search1000ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems1000/${name}`);
+    return response.data;
+  },
+
   async getAll5000Po(): Promise<Gem[]> {
     const response = await api.get<Gem[]>("/gems5000");
 
@@ -95,6 +120,11 @@ export const GemsService = {
 
   async search5000(id: number | undefined) {
     const response = await api.get(`/gems5000/${id}`);
+    return response.data;
+  },
+
+  async search5000ByName(name: string | undefined) {
+    const response = await api.get(`/searchByName/gems5000/${name}`);
     return response.data;
   },
 };

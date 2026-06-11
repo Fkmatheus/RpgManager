@@ -17,7 +17,7 @@ export const SearchAllService = {
   },
 
   async findItemByName(item: string): Promise<magicItens> {
-    const response = await api.get<magicItens>(`/searchAll/gem/${item}`);
+    const response = await api.get<magicItens>(`/searchAll/item/${item}`);
 
     return response.data;
   }
