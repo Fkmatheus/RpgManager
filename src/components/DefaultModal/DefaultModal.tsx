@@ -182,7 +182,7 @@ export function DefaultModal({ id, isOpen, onClose, itemName, tableName }: Defau
               }}
               marginTop={5}
             >
-              <Text letterSpacing="1px">
+              <Text letterSpacing="1px" whiteSpace="pre-line">
                 {result?.description}
               </Text>
             </Box>
