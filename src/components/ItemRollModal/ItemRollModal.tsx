@@ -192,6 +192,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
                         scrollbarWidth: "none",
                       }}
                       letterSpacing="1px"
+                      whiteSpace="pre-line"
                     >
                       <Text>{result?.description}</Text>
                     </Box>
