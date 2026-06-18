@@ -12,13 +12,13 @@ export function HomeSection() {
   return (
     <>
       <Flex
-        height={"260vh"}
+        height={"275vh"}
         width={"100%"}
         backgroundColor={"gray.900"}
         flexDirection={"column"}
         marginLeft={"3%"}
       >
-        <Flex width={"98%"} justifyContent={"center"} flexDirection={"column"}>
+        <Flex width={"100%"} paddingBottom={"40px"} paddingRight={"15px"} justifyContent={"center"} flexDirection={"column"}>
           <Box
             display={"flex"}
             flexDirection={"row"}
@@ -34,7 +34,7 @@ export function HomeSection() {
                 cursor: "pointer",
               }}
               marginTop={3}
-              marginLeft={"7%"}
+              marginLeft={"5%"}
               border={"solid 1px black"}
               borderRadius={"20px"}
               width={"60%"}
