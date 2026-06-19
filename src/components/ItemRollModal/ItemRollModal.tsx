@@ -158,11 +158,11 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
             <>
               <Box display={"flex"} flexDirection={'row'} gap={5}>
                 <Flex
-                  width="50%"
+                  width="60%"
                   justify="center"
                   align="center"
                 >
-                  <img width={"400px"} src={imagePath} alt={result?.title} />
+                  <img width={"500px"} src={imagePath} alt={result?.title} />
                 </Flex>
                 <Flex flexDirection={'column'} gap={5} width={"50%"} overflowY="auto" sx={{
                   scrollbarWidth: "none",
@@ -204,7 +204,7 @@ export function ItemRollModal({ intDice, isOpen, onClose, tableName, loading }: 
                       display="flex"
                       justifyContent="center"
                       alignItems="center"
-                      marginLeft={300}
+                      marginLeft={280}
                     >
                       <FaDiceD20
                         size={60}
