@@ -2,7 +2,7 @@ import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import icon from "../../img/icon.png";
 import { FaBook, FaGem, FaHome, FaMagic, FaPalette } from "react-icons/fa";
-import { GiOpenTreasureChest, GiTreasureMap } from "react-icons/gi";
+import { GiMagicSwirl, GiOpenTreasureChest, GiTreasureMap, GiWizardStaff } from "react-icons/gi";
 
 
 export function Header() {
@@ -83,8 +83,28 @@ export function Header() {
 							</Link>
 						</Box>
 
+						<Box
+							color={"gray"}
+							height={"12vh"}
+							width={"100%"}
+							textAlign={"center"}
+							display={"flex"}
+							justifyContent={"center"}
+							alignItems={"center"}
+							_hover={{ textColor: "tomato", fontWeight: "bold" }}
+						>
+							<Link
+								title="Objetos de Arte"
+								as={RouterLink}
+								to="/spells"
+								_hover={{ textDecoration: "none" }}
+							>
+								<GiWizardStaff style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
+							</Link>
+						</Box>
+
 					</Box>
-					<Box marginTop={"200%"}>
+					<Box marginTop={"100%"}>
 						<Image src={icon}></Image>
 					</Box>
 				</Flex>
