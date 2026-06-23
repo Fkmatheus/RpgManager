@@ -30,6 +30,9 @@ function schoolEnglish(school: string) {
     case school.includes("Abjuração"):
       return 'abjuration';
 
+    case school.includes("Conjuração"):
+      return 'conjuration';
+
     case school.includes("Adivinhação"):
       return 'divination';
 
