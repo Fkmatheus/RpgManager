@@ -2,7 +2,7 @@ import { Box, Flex, Image, Text, Link } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import icon from "../../img/icon.png";
 import { FaBook, FaGem, FaHome, FaMagic, FaPalette } from "react-icons/fa";
-import { GiMagicSwirl, GiOpenTreasureChest, GiTreasureMap, GiWizardStaff } from "react-icons/gi";
+import { GiOpenTreasureChest, GiScrollUnfurled} from "react-icons/gi";
 
 
 export function Header() {
@@ -99,7 +99,7 @@ export function Header() {
 								to="/spells"
 								_hover={{ textDecoration: "none" }}
 							>
-								<GiWizardStaff style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
+								<GiScrollUnfurled style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
 							</Link>
 						</Box>
 

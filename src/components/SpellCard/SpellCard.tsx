@@ -1,6 +1,26 @@
 import { Box, Text } from "@chakra-ui/react";
 import { FONT_SIZE_MEDIUM_TEXT, FONT_SIZE_SUBTITLE, FONT_SIZE_TABLE, FONT_SIZE_TEXT, FONT_SIZE_TITLE } from "../../helpers/globalFont";
-import type { SpellCardProps } from "../../types/Spells";
+
+interface SpellCardProps {
+  school: string;
+  title: string;
+  description: string;
+  nivel: string;
+  timeConjuration: string;
+  alcance: string;
+  componentes: string;
+  duration: string;
+  ritual: boolean;
+  bard: boolean;
+  wizard: boolean;
+  cleric: boolean;
+  druid: boolean;
+  sorcerer: boolean;
+  mage: boolean;
+  paladin: boolean;
+  ranger: boolean;
+  enableScroll: boolean;
+}
 
 function schoolEnglish(school: string) {
   switch (true) {
@@ -28,7 +48,7 @@ function schoolEnglish(school: string) {
   }
 }
 
-export function SpellCard({ school, alcance, componentes, description, duration, timeConjuration, title, nivel }: SpellCardProps) {
+export function SpellCard({ school, alcance, componentes, description, duration, timeConjuration, title, nivel, enableScroll }: SpellCardProps) {
   return (
     <Box
       width="48%"
@@ -48,6 +68,7 @@ export function SpellCard({ school, alcance, componentes, description, duration,
         backgroundPosition: "center",
       }}
     >
+
       <Box width={"100%"}>
         <Box display={"flex"} flexDirection={"column"} marginTop={"22%"} width={"100%"} height={"10vh"} justifyContent={"center"} alignItems={"center"}>
           <Text fontSize={FONT_SIZE_SUBTITLE}>{title}</Text>
@@ -59,12 +80,34 @@ export function SpellCard({ school, alcance, componentes, description, duration,
         <Text fontSize={FONT_SIZE_MEDIUM_TEXT}>Descrição</Text>
       </Box>
 
-      <Box display={"flex"} flexDirection={"column"} gap={2} width={"95%"} height={"57%"} >
+      <Box overflowY={enableScroll ? "auto" : "hidden"}
+        sx={{
+          scrollbarWidth: "thin", // Firefox
+          scrollbarColor: "rgba(215, 182, 97, 0.4) transparent",
+
+          "&::-webkit-scrollbar": {
+            width: "6px",
+          },
+
+          "&::-webkit-scrollbar-track": {
+            background: "transparent",
+          },
+
+          "&::-webkit-scrollbar-thumb": {
+            backgroundColor: "rgba(215, 182, 97, 0.4)",
+            borderRadius: "10px",
+            border: "1px solid rgba(0,0,0,0.2)",
+          },
+
+          "&::-webkit-scrollbar-thumb:hover": {
+            backgroundColor: "rgba(215, 182, 97, 0.7)",
+          },
+        }} display={"flex"} flexDirection={"column"} gap={2} width={"95%"} height={"57%"} >
         <Text marginTop={"5%"} marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>• Tempo de conjuração: <span>{timeConjuration}</span></Text>
         <Text marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>• Alcance: <span>{alcance}</span></Text>
         <Text marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>• Componentes: <span>{componentes}</span></Text>
         <Text marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>• Duração: <span>{duration}</span></Text>
-        <Text whiteSpace="pre-line" noOfLines={9} marginTop={"5%"} marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>{description}</Text>
+        <Text whiteSpace="pre-line" marginTop={"5%"} marginLeft={"10%"} gap={10} fontSize={FONT_SIZE_TEXT}>{description}</Text>
       </Box>
     </Box>
   )
