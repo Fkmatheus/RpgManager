@@ -8,4 +8,21 @@ export const SpellsService = {
     return response.data;
   },
 
+  async createSpell(spell: SpellCardProps): Promise<SpellCardProps> {
+    console.log(spell);
+    const response = await api.post<SpellCardProps>(
+      "/magicSpells/create",
+      spell,
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    console.log(response);
+
+    return response.data;
+  },
+
 };

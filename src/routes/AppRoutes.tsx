@@ -6,6 +6,7 @@ import { Gems } from "../pages/Gems.tsx"
 import { MagicItens } from "../pages/MagicItens.tsx";
 import { Treasure } from "../pages/Treasure.tsx";
 import { MagicSpells } from "../pages/magicSpells.tsx";
+import { CreateSpell } from "../pages/CreateSpell.tsx";
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
       <Route path="/ItensMagicos" element={<MagicItens />} />
       <Route path="/Treasure" element={<Treasure />} />
       <Route path="/Spells" element={<MagicSpells />} />
+      <Route path="/Create" element={<CreateSpell />} />
     </Routes>
   );
 }
