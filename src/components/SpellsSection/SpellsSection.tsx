@@ -1,6 +1,6 @@
 import { Box, Flex, Input, Select, Text } from "@chakra-ui/react";
 import { Footer } from "../Footer/Footer";
-import { FONT_SIZE_TABLE, FONT_SIZE_TEXT } from "../../helpers/globalFont";
+import { FONT_SIZE_SUBTITLE, FONT_SIZE_TABLE, FONT_SIZE_TEXT, FONT_SIZE_TITLE } from "../../helpers/globalFont";
 import { GiScrollUnfurled } from "react-icons/gi";
 import { SpellCard } from '../SpellCard/SpellCard';
 import { useEffect, useState } from "react";
@@ -13,16 +13,23 @@ export function SpellsSection() {
   const [magicSpells, setMagicSpells] = useState<SpellCardProps[]>([]);
   const [filterBarSelect, setFilterBarSelect] = useState<boolean>(true);
   const [enableScroll, setEnableScroll] = useState<boolean>(false);
+  const [filters, setFilters] = useState({
+    title: "",
+    school: "",
+    nivel: "",
+    class: ""
+
+  });
 
   useEffect(() => {
-    async function loadMagicSpells() {
-      const spells = await SpellsService.getAllSpells();
+    async function loadMagicSpells(customFilters = filters) {
+      const spells = await SpellsService.getAllSpells(customFilters);
       setMagicSpells(spells);
 
     }
 
     loadMagicSpells();
-  }, []);
+  }, [magicSpells]);
   return (
     <Flex height={"100%"}
       width={"100%"}
@@ -32,18 +39,24 @@ export function SpellsSection() {
       fontFamily={'Cinzel'}>
 
 
-      <Box marginLeft={"5%"} borderRadius={"20px"} marginTop={"2.5%"} minHeight={"110vh"} width={"92%"} backgroundColor={"#161616"}>
+      <Box paddingBottom={"30px"} marginLeft={"5%"} borderRadius={"20px"} marginTop={"2.5%"} minHeight={"110vh"} width={"92%"} backgroundColor={"#161616"}>
         {filterBarSelect && (
           <Box position="sticky" top="0" zIndex="1000" gap={"20px"} padding={"20px"} display={"flex"} flexDirection={"row"} borderRadius={"20px"} border={"1px solid #202020"} marginTop={"2.5%"} marginLeft={"4%"} height={"20vh"} width={"92%"} backgroundColor={"#111111"}>
 
-            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"20%"}>
+            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"25%"}>
               <Text color={"white"} fontSize={FONT_SIZE_TEXT}>Nome da mágia</Text>
-              <Input borderColor={"#202020"}></Input>
+              <Input color={"white"} value={filters.title}
+                onChange={(e) =>
+                  setFilters({ ...filters, title: e.target.value })
+                } borderColor={"#202020"}></Input>
             </Box>
 
-            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"20%"}>
+            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"25%"}>
               <Text color={"white"} fontSize={FONT_SIZE_TEXT}>Classe</Text>
-              <Select borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
+              <Select value={filters.class}
+                onChange={(e) =>
+                  setFilters({ ...filters, class: e.target.value })
+                } borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Selecione uma classe</option>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="bard">Bardo</option>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="wizard">Bruxo</option>
@@ -56,26 +69,33 @@ export function SpellsSection() {
               </Select>
             </Box>
 
-            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"20%"}>
+            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"25%"}>
               <Text color={"white"} fontSize={FONT_SIZE_TEXT}>Escola</Text>
-              <Select borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
+              <Select value={filters.school}
+                onChange={(e) =>
+                  setFilters({ ...filters, school: e.target.value })
+                } borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Selecione uma Escola</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Adivinhação</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Abjuração</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Encantamento</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Necromancia</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Ilusão</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Conjuração</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Evocação</option>
-                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Transmutação</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Adivinhação">Adivinhação</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Abjuração">Abjuração</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Encantamento">Encantamento</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Necromancia">Necromancia</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Ilusão">Ilusão</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Conjuração">Conjuração</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Evocação">Evocação</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="Transmutação">Transmutação</option>
 
               </Select>
             </Box>
 
-            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"20%"}>
+            <Box display={"flex"} flexDirection={"column"} gap={"10px"} width={"25%"}>
               <Text color={"white"} fontSize={FONT_SIZE_TEXT}>Nível</Text>
-              <Select borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
+              <Select value={filters.nivel}
+                onChange={(e) =>
+                  setFilters({ ...filters, nivel: e.target.value })
+                } borderColor={"#202020"} fontSize={FONT_SIZE_TABLE} color={"white"}>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="">Selecione um Nível</option>
+                <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="0">0º</option>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="1">1º</option>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="2">2º</option>
                 <option style={{ backgroundColor: "#111111", color: "white", fontSize: FONT_SIZE_TABLE }} value="3">3º</option>
@@ -89,54 +109,46 @@ export function SpellsSection() {
               </Select>
             </Box>
 
-            <Box display={"flex"} justifyContent={"center"} alignItems={"center"} width={"10%"}>
-              <Box
-                color={"white"}
-                height={"12vh"}
-                width={"100%"}
-                textAlign={"center"}
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                cursor={"pointer"}
-                _hover={{ textColor: "tomato", fontWeight: "bold" }}
-              >
-
-                <GiScrollUnfurled size={60} style={{ fontSize: "clamp(38px, 2vw, 50px)" }} />
-
-              </Box>
-            </Box>
-
-
           </Box>
         )}
 
-        <Box gap={3} display={"flex"} flexWrap="wrap" borderTop={"2px solid tomato"} marginLeft={"4%"} borderRadius={"20px"} marginTop={"2.5%"} minHeight={"80vh"} width={"92%"} backgroundColor={"#111111"}>
+        {magicSpells.length === 0 ?
+          <>
+            <Box gap={3} display={"flex"} flexWrap="wrap" borderTop={"2px solid tomato"} marginLeft={"4%"} borderRadius={"20px"} marginTop={"2.5%"} minHeight={"80vh"} width={"92%"} backgroundColor={"#111111"}>
+              <Box borderRadius={"20px"} width={"100%"} height={"90vh"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+                <Text fontSize={FONT_SIZE_SUBTITLE} color={"#d7b661"} fontFamily={"Berry Rotunda"}>Nenhuma mágia com esses filtros foi encontrada</Text>
+              </Box>
+            </Box>
 
-          {magicSpells.map((spell, index) => (
-            <SpellCard
-              key={index}
-              school={spell.school}
-              title={spell.title}
-              nivel={spell.nivel}
-              description={spell.description}
-              timeConjuration={spell.timeConjuration}
-              alcance={spell.alcance}
-              componentes={spell.componentes}
-              duration={spell.duration}
-              ritual={spell.ritual}
-              bard={spell.bard}
-              wizard={spell.wizard}
-              cleric={spell.cleric}
-              druid={spell.druid}
-              sorcerer={spell.sorcerer}
-              mage={spell.mage}
-              paladin={spell.paladin}
-              ranger={spell.ranger}
-              enableScroll={enableScroll}
-            />
-          ))}
-        </Box>
+          </> :
+
+          <Box gap={3} display={"flex"} flexWrap="wrap" borderTop={"2px solid tomato"} marginLeft={"4%"} borderRadius={"20px"} marginTop={"2.5%"} minHeight={"80vh"} width={"92%"} backgroundColor={"#111111"}>
+
+            {magicSpells.map((spell, index) => (
+              <SpellCard
+                key={index}
+                school={spell.school}
+                title={spell.title}
+                nivel={spell.nivel}
+                description={spell.description}
+                timeConjuration={spell.timeConjuration}
+                alcance={spell.alcance}
+                componentes={spell.componentes}
+                duration={spell.duration}
+                ritual={spell.ritual}
+                bard={spell.bard}
+                wizard={spell.wizard}
+                cleric={spell.cleric}
+                druid={spell.druid}
+                sorcerer={spell.sorcerer}
+                mage={spell.mage}
+                paladin={spell.paladin}
+                ranger={spell.ranger}
+                enableScroll={enableScroll}
+              />
+            ))}
+          </Box>}
+
       </Box>
 
       <Box position="fixed"
